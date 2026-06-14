@@ -1,1596 +1,971 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AZ Impianti di Elsayed Abdelaziz — Impianti Idraulici Lombardia</title>
-  <meta name="description" content="AZ Impianti offre impianti idraulici, manutenzioni, riparazioni e assistenza tecnica 24/7 in tutta la Lombardia. Monza, Monza Brianza, Lodi e provincia." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Idraulico a Monza | Pronto Intervento 24/7 | AZ Impianti</title>
+  <meta name="description" content="AZ Impianti di Elsayed Abdelaziz — idraulico a Monza. Pronto intervento, impianti idraulici, manutenzione in tutta la Lombardia. Chiama ora."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://azimpiantimonza.it/"/>
+  <meta property="og:title" content="Idraulico a Monza | AZ Impianti"/>
+  <meta property="og:description" content="Pronto intervento idraulico a Monza e Lombardia. Chiama ora AZ Impianti."/>
+  <meta property="og:url" content="https://azimpiantimonza.it/"/>
+  <meta property="og:type" content="website"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":["LocalBusiness","Plumber"],
+    "name":"AZ Impianti di Elsayed Abdelaziz",
+    "url":"https://azimpiantimonza.it",
+    "telephone":"+393289725238",
+    "email":"abdelaziz@azimpiantidielsayedabdelaziz.com",
+    "address":{"@type":"PostalAddress","streetAddress":"Via Brembo 1","addressLocality":"Monza","postalCode":"20900","addressRegion":"MB","addressCountry":"IT"},
+    "geo":{"@type":"GeoCoordinates","latitude":45.5845,"longitude":9.2744},
+    "areaServed":["Monza","Brianza","Lombardia"],
+    "priceRange":"€€",
+    "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"20:00"},
+    "vatID":"IT13848220961"
+  }
+  </script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #0a1628;
-      color: #ffffff;
-      line-height: 1.6;
-      overflow-x: hidden;
+    :root {
+      --orange: #FF6B00;
+      --orange-glow: #FF8C00;
+      --orange-neon: rgba(255,107,0,0.6);
+      --dark: #080C12;
+      --dark2: #0D1219;
+      --dark3: #111820;
+      --steel: #1C2A3A;
+      --steel2: #243344;
+      --blue-accent: #0A7CC1;
+      --text: #E8EDF2;
+      --muted: #7A8FA6;
+      --white: #fff;
+      --pipe: #2A3F55;
     }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;line-height:1.6;}
+    a{text-decoration:none;color:inherit;}
+    ::selection{background:var(--orange);color:#fff;}
 
-    /* ── UTILITIES ── */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .cyan { color: #4fc3f7; }
-    .orange { color: #f5a623; }
-    .muted { color: #8899bb; }
-    .section-label {
-      display: inline-block;
-      color: #4fc3f7;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar{width:6px;}
+    ::-webkit-scrollbar-track{background:var(--dark);}
+    ::-webkit-scrollbar-thumb{background:var(--orange);border-radius:3px;}
+
+    /* ── NEON BUTTON ── */
+    .btn-neon {
+      display:inline-flex;align-items:center;gap:0.55rem;
+      background:var(--orange);color:#fff;
+      padding:0.85rem 2rem;border-radius:8px;
+      font-weight:700;font-size:0.95rem;font-family:inherit;
+      border:none;cursor:pointer;
+      box-shadow:0 0 16px var(--orange-neon), 0 0 40px rgba(255,107,0,0.25), inset 0 1px 0 rgba(255,255,255,0.15);
+      transition:all 0.25s ease;
+      letter-spacing:0.3px;
     }
-    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .btn-neon:hover{
+      background:var(--orange-glow);
+      box-shadow:0 0 28px var(--orange-neon), 0 0 64px rgba(255,107,0,0.4), 0 0 100px rgba(255,107,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2);
+      transform:translateY(-2px);
+    }
+    .btn-ghost {
+      display:inline-flex;align-items:center;gap:0.55rem;
+      background:transparent;color:var(--text);
+      padding:0.85rem 2rem;border-radius:8px;
+      font-weight:600;font-size:0.95rem;font-family:inherit;
+      border:1.5px solid rgba(255,255,255,0.2);cursor:pointer;
+      transition:all 0.25s;
+    }
+    .btn-ghost:hover{border-color:var(--orange);color:var(--orange);box-shadow:0 0 16px rgba(255,107,0,0.2);}
+    .btn-sm{padding:0.6rem 1.35rem;font-size:0.85rem;}
 
     /* ── NAVBAR ── */
-    #navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: #0a1628;
-      border-bottom: 1px solid #1a3a5c;
-      transition: box-shadow 0.3s ease;
+    #navbar{
+      position:sticky;top:0;z-index:999;
+      background:rgba(8,12,18,0.92);
+      backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,107,0,0.12);
+      padding:0 2rem;height:64px;
+      display:flex;align-items:center;justify-content:space-between;
+      transition:box-shadow 0.3s;
     }
-    #navbar.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.5); }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 70px;
+    #navbar.scrolled{box-shadow:0 4px 30px rgba(0,0,0,0.5);}
+    .nav-logo{display:flex;align-items:center;gap:0.75rem;}
+    .logo-icon{
+      width:44px;height:44px;flex-shrink:0;
+      display:flex;align-items:center;justify-content:center;
     }
-    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .nav-brand svg { width: 38px; height: 38px; flex-shrink: 0; }
-    .nav-brand-text { display: flex; flex-direction: column; }
-    .nav-brand-name {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: 0.03em;
-      line-height: 1.2;
-    }
-    .nav-brand-sub {
-      font-size: 0.65rem;
-      font-weight: 500;
-      color: #4fc3f7;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
-    .nav-links a {
-      color: #8899bb;
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: #ffffff; }
-    .btn-wa-nav {
-      background: #f5a623;
-      color: #0a1628 !important;
-      padding: 8px 18px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
-      white-space: nowrap;
-    }
-    .btn-wa-nav:hover { background: #e8951a; transform: translateY(-1px); }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: #ffffff;
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      background: #0d1e35;
-      border-top: 1px solid #1a3a5c;
-      padding: 16px 24px 20px;
-      gap: 4px;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      color: #8899bb;
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(26,58,92,0.2);
-      transition: color 0.2s;
-    }
-    .mobile-menu a:hover { color: #ffffff; }
-    .mobile-menu .btn-wa-nav {
-      margin-top: 10px;
-      text-align: center;
-      display: block;
-      color: #0a1628 !important;
-      border-bottom: none;
+    .logo-icon img{width:44px;height:44px;object-fit:contain;}
+    .logo-text strong{color:#fff;font-size:1.05rem;font-weight:800;display:block;line-height:1.1;}
+    .logo-text span{color:var(--muted);font-size:0.68rem;font-weight:500;text-transform:uppercase;letter-spacing:0.8px;}
+    .nav-links{display:flex;align-items:center;gap:0.1rem;list-style:none;}
+    .nav-links a{color:var(--muted);font-size:0.88rem;font-weight:500;padding:0.45rem 0.8rem;border-radius:6px;transition:color 0.2s,background 0.2s;}
+    .nav-links a:hover{color:#fff;background:rgba(255,255,255,0.06);}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+    .hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform 0.3s,opacity 0.3s;}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    @media(max-width:768px){
+      .hamburger{display:flex;}
+      .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:rgba(8,12,18,0.98);flex-direction:column;align-items:stretch;padding:1rem 1.5rem;gap:0;border-bottom:1px solid rgba(255,107,0,0.15);}
+      .nav-links.open{display:flex;}
+      .nav-links a{padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+      .nav-links li:last-child a{border:none;}
     }
 
     /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      background: #0a1628;
-      overflow: hidden;
+    #home{
+      position:relative;min-height:100vh;
+      display:flex;align-items:center;
+      overflow:hidden;
+      background:var(--dark);
     }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
+    /* PIPE BACKGROUND */
+    .pipe-bg{
+      position:absolute;inset:0;
       background:
-        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(17,34,68,0.8) 0%, transparent 70%),
-        repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(26,58,92,0.1) 60px),
-        repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(26,58,92,0.1) 60px);
-      z-index: 0;
+        linear-gradient(rgba(8,12,18,0.82),rgba(8,12,18,0.72)),
+        repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,107,0,0.015) 60px,rgba(255,107,0,0.015) 61px),
+        repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(10,124,193,0.02) 60px,rgba(10,124,193,0.02) 61px);
     }
-    .hero-pipes {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      overflow: hidden;
+    /* Animated pipe SVG */
+    .pipe-visual{
+      position:absolute;right:-60px;top:50%;transform:translateY(-50%);
+      width:55%;max-width:720px;opacity:0.18;
+      pointer-events:none;
     }
-    .hero-pipes::before {
-      content: '';
-      position: absolute;
-      top: 20%; right: 5%;
-      width: 320px; height: 320px;
-      border: 2px solid rgba(26,58,92,0.25);
-      border-radius: 50%;
+    /* Water drip animation */
+    .water-drip{
+      position:absolute;
+      width:3px;border-radius:2px;
+      background:linear-gradient(to bottom, rgba(10,124,193,0.9), rgba(10,124,193,0));
+      animation:drip 2.4s ease-in infinite;
     }
-    .hero-pipes::after {
-      content: '';
-      position: absolute;
-      bottom: 10%; right: 15%;
-      width: 180px; height: 180px;
-      border: 2px solid rgba(79,195,247,0.12);
-      border-radius: 50%;
+    @keyframes drip{
+      0%{height:0;opacity:0;top:0;}
+      20%{opacity:1;}
+      80%{opacity:0.8;}
+      100%{height:120px;opacity:0;top:80px;}
     }
-    .hero-glow {
-      position: absolute;
-      top: -100px; right: -100px;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(79,195,247,0.03) 0%, transparent 70%);
-      z-index: 0;
+    .drip1{left:calc(50% + 200px);top:38%;animation-delay:0s;animation-duration:2.2s;}
+    .drip2{left:calc(50% + 280px);top:42%;animation-delay:0.9s;animation-duration:2.8s;}
+    .drip3{left:calc(50% + 150px);top:45%;animation-delay:1.7s;animation-duration:2s;}
+    .water-drop{
+      position:absolute;width:8px;height:8px;border-radius:50%;
+      background:rgba(10,124,193,0.6);
+      animation:dropfall 2.4s ease-in infinite;
     }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 820px;
+    @keyframes dropfall{
+      0%{transform:translateY(0) scale(0);opacity:0;}
+      10%{opacity:1;}
+      80%{transform:translateY(140px) scale(1);opacity:0.6;}
+      100%{transform:translateY(160px) scale(0.5) scaleX(2.5);opacity:0;}
     }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #0d2040;
-      border: 1px solid #1a3a5c;
-      border-radius: 100px;
-      padding: 6px 16px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      color: #8899bb;
-      margin-bottom: 28px;
+    .drop1{left:calc(50% + 199px);top:38%;animation-delay:2.1s;}
+    .drop2{left:calc(50% + 279px);top:42%;animation-delay:3.6s;}
+    .drop3{left:calc(50% + 149px);top:45%;animation-delay:3.6s;}
+    /* Puddle ripple */
+    .puddle{
+      position:absolute;left:calc(50% + 170px);top:58%;
+      width:80px;height:14px;border-radius:50%;
+      background:rgba(10,124,193,0.12);
+      border:1px solid rgba(10,124,193,0.3);
+      animation:ripple 2.4s ease-out infinite;
     }
-    .hero-badge .dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 8px #22c55e;
-      animation: pulse-green 2s infinite;
+    @keyframes ripple{
+      0%{transform:scale(0.6);opacity:0;}
+      30%{opacity:1;}
+      100%{transform:scale(1.6);opacity:0;}
     }
-    @keyframes pulse-green {
-      0%, 100% { box-shadow: 0 0 8px #22c55e; }
-      50% { box-shadow: 0 0 16px #22c55e; }
+    /* Orange glow blob */
+    .hero-glow{
+      position:absolute;bottom:-100px;left:-100px;
+      width:500px;height:500px;border-radius:50%;
+      background:radial-gradient(circle,rgba(255,107,0,0.12) 0%,transparent 70%);
+      pointer-events:none;
     }
-    .hero-h1 {
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
+    .hero-glow2{
+      position:absolute;top:-80px;right:20%;
+      width:400px;height:400px;border-radius:50%;
+      background:radial-gradient(circle,rgba(10,124,193,0.08) 0%,transparent 70%);
+      pointer-events:none;
     }
-    .hero-subtitle {
-      font-size: 1.1rem;
-      color: #8899bb;
-      max-width: 600px;
-      margin-bottom: 8px;
+    /* Hero content */
+    .hero-content{
+      position:relative;z-index:2;
+      max-width:1200px;margin:0 auto;padding:6rem 2rem 4rem;
+      width:100%;
     }
-    .hero-zone {
-      font-size: 0.95rem;
-      color: #4fc3f7;
-      font-weight: 500;
-      margin-bottom: 40px;
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.3);
+      color:var(--orange);padding:0.45rem 1rem;border-radius:100px;
+      font-size:0.78rem;font-weight:700;letter-spacing:0.5px;
+      text-transform:uppercase;margin-bottom:2rem;
     }
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .badge-dot{width:7px;height:7px;border-radius:50%;background:var(--orange);animation:pulse-dot 1.5s ease-in-out infinite;}
+    @keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(255,107,0,0.6);}50%{box-shadow:0 0 0 5px rgba(255,107,0,0);}}
+    .hero-content h1{
+      font-size:clamp(2.4rem,5vw,4rem);font-weight:900;
+      color:#fff;line-height:1.1;letter-spacing:-1px;
+      margin-bottom:1.5rem;max-width:680px;
     }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #f5a623;
-      color: #0a1628;
-      padding: 14px 26px;
-      border-radius: 10px;
-      font-weight: 800;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-      letter-spacing: 0.03em;
-      border: 2px solid transparent;
+    .hero-content h1 em{font-style:normal;color:var(--orange);text-shadow:0 0 30px rgba(255,107,0,0.5);}
+    .hero-sub{color:var(--muted);font-size:1.05rem;max-width:520px;line-height:1.75;margin-bottom:2.5rem;}
+    .hero-sub strong{color:var(--text);}
+    .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;}
+    .hero-trust{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
+    .trust-item{display:flex;align-items:center;gap:0.5rem;color:var(--muted);font-size:0.82rem;font-weight:500;}
+    .trust-icon{width:16px;height:16px;color:var(--orange);}
+    .hero-phone{
+      display:inline-flex;align-items:center;gap:0.75rem;
+      color:#fff;font-size:1.8rem;font-weight:800;letter-spacing:-0.5px;
+      margin-bottom:1.5rem;
     }
-    .btn-primary:hover {
-      background: #e8951a;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(245,166,35,0.2);
+    .phone-icon-wrap{
+      width:44px;height:44px;border-radius:50%;
+      background:var(--orange);display:flex;align-items:center;justify-content:center;
+      box-shadow:0 0 20px rgba(255,107,0,0.5);flex-shrink:0;
     }
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #0d2040;
-      color: #ffffff;
-      padding: 14px 26px;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s, border-color 0.2s;
-      border: 2px solid #1a3a5c;
-    }
-    .btn-outline:hover {
-      background: #112244;
-      border-color: rgba(79,195,247,0.3);
-      transform: translateY(-2px);
-    }
-    .hero-scroll {
-      position: absolute;
-      bottom: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: #8899bb;
-      font-size: 0.75rem;
-    }
-    .hero-scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, #4fc3f7, transparent);
-      animation: scroll-line 2s infinite;
-    }
-    @keyframes scroll-line {
-      0% { opacity: 1; transform: scaleY(1); }
-      100% { opacity: 0; transform: scaleY(0.5) translateY(20px); }
+    @media(max-width:768px){
+      .hero-content{padding:5rem 1.25rem 3rem;}
+      .hero-btns{flex-direction:column;}
+      .hero-btns .btn-neon,.hero-btns .btn-ghost{justify-content:center;}
+      .drip1,.drip2,.drip3,.drop1,.drop2,.drop3,.puddle{display:none;}
     }
 
-    /* ── COSA FACCIAMO ── */
-    #cosa-facciamo {
-      padding: 96px 0;
-      background: #0d1e35;
+    /* ── STATS BAR ── */
+    .stats-bar{
+      background:var(--dark2);
+      border-top:1px solid rgba(255,107,0,0.15);
+      border-bottom:1px solid rgba(255,255,255,0.04);
+      padding:1.5rem 2rem;
     }
-    .section-header { margin-bottom: 48px; }
-    .section-header h2 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-    .section-header p { color: #8899bb; font-size: 1rem; max-width: 560px; }
+    .stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+    .stat{text-align:center;}
+    .stat-num{font-size:1.8rem;font-weight:900;color:var(--orange);text-shadow:0 0 20px rgba(255,107,0,0.4);line-height:1;}
+    .stat-label{color:var(--muted);font-size:0.78rem;font-weight:500;margin-top:0.25rem;text-transform:uppercase;letter-spacing:0.5px;}
+    @media(max-width:600px){.stats-inner{grid-template-columns:repeat(2,1fr);}.stat-num{font-size:1.4rem;}}
 
-    /* Carousel */
-    .carousel-wrapper { position: relative; }
-    .carousel-track {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
+    /* ── SECTION BASE ── */
+    section{padding:6rem 2rem;}
+    .container{max-width:1200px;margin:0 auto;}
+    .section-label{
+      display:inline-block;font-size:0.72rem;font-weight:700;
+      letter-spacing:2px;text-transform:uppercase;color:var(--orange);
+      margin-bottom:0.75rem;
     }
-    .carousel-image-area { position: relative; }
-    .carousel-image {
-      width: 100%;
-      aspect-ratio: 4/3;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid #1a3a5c;
-      position: relative;
-    }
-    .slide-image {
-      position: absolute;
-      inset: 0;
-      display: none;
-    }
-    .slide-image.active { display: block; }
+    .section-title{font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:0.75rem;letter-spacing:-0.5px;}
+    .section-sub{color:var(--muted);font-size:0.95rem;max-width:560px;line-height:1.75;}
 
-    /* CSS patterns for each slide */
-    .si-1 { background: #0d2040; }
-    .si-1::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        repeating-linear-gradient(45deg, rgba(26,58,92,0.13) 0px, rgba(26,58,92,0.13) 2px, transparent 2px, transparent 30px),
-        repeating-linear-gradient(-45deg, rgba(79,195,247,0.06) 0px, rgba(79,195,247,0.06) 2px, transparent 2px, transparent 30px),
-        radial-gradient(circle at 30% 60%, rgba(245,166,35,0.08) 0%, transparent 50%);
+    /* ── SERVIZI ── */
+    #servizi{background:var(--dark2);}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem;}
+    .svc-card{
+      background:var(--dark3);
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:14px;padding:2rem 1.75rem;
+      position:relative;overflow:hidden;
+      transition:transform 0.25s,border-color 0.25s,box-shadow 0.25s;
     }
-    .si-1::after {
-      content: '';
-      position: absolute;
-      left: 20%; top: 50%; right: 20%;
-      height: 4px; background: #1a3a5c;
-      box-shadow: 0 -20px 0 4px #1a3a5c, 0 20px 0 4px #1a3a5c, 0 -40px 0 4px #1a3a5c;
+    .svc-card::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,var(--orange),transparent);
+      opacity:0;transition:opacity 0.3s;
     }
-    .si-2 { background: #091828; }
-    .si-2::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(circle at 25% 25%, rgba(79,195,247,0.08), transparent 40%),
-        radial-gradient(circle at 75% 75%, rgba(245,166,35,0.06), transparent 40%),
-        repeating-linear-gradient(90deg, rgba(26,58,92,0.1) 0px, rgba(26,58,92,0.1) 1px, transparent 1px, transparent 40px),
-        repeating-linear-gradient(0deg, rgba(26,58,92,0.1) 0px, rgba(26,58,92,0.1) 1px, transparent 1px, transparent 40px);
+    .svc-card:hover{transform:translateY(-4px);border-color:rgba(255,107,0,0.25);box-shadow:0 12px 36px rgba(0,0,0,0.4),0 0 0 1px rgba(255,107,0,0.1);}
+    .svc-card:hover::before{opacity:1;}
+    .svc-img{
+      width:100%;height:200px;object-fit:cover;
+      border-radius:10px;margin-bottom:1.25rem;
+      display:block;
     }
-    .si-2::after {
-      content: '';
-      position: absolute;
-      width: 80px; height: 80px;
-      border: 3px solid rgba(79,195,247,0.18);
-      border-radius: 50%;
-      top: 50%; left: 50%;
-      transform: translate(-50%,-50%);
-      box-shadow: 0 0 0 20px rgba(79,195,247,0.06), 0 0 0 40px rgba(79,195,247,0.03);
+    .svc-icon-wrap{
+      width:50px;height:50px;border-radius:12px;
+      background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);
+      display:flex;align-items:center;justify-content:center;
+      margin-bottom:1.25rem;
     }
-    .si-3 { background: #0a1a2e; }
-    .si-3::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        repeating-linear-gradient(0deg, transparent 0px, transparent 19px, rgba(34,197,94,0.07) 20px),
-        repeating-linear-gradient(90deg, transparent 0px, transparent 19px, rgba(34,197,94,0.04) 20px),
-        radial-gradient(ellipse at 70% 30%, rgba(245,166,35,0.1), transparent 50%);
-    }
-    .si-4 { background: #07111e; }
-    .si-4::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        repeating-linear-gradient(135deg, rgba(26,58,92,0.16) 0px, rgba(26,58,92,0.16) 3px, transparent 3px, transparent 24px),
-        radial-gradient(circle at 60% 60%, rgba(79,195,247,0.08) 0%, transparent 55%);
-    }
-    .si-4::after {
-      content: '';
-      position: absolute;
-      bottom: 20%; left: 10%; right: 10%; height: 2px;
-      background: linear-gradient(to right, transparent, rgba(245,166,35,0.25), transparent);
-    }
-    .si-5 { background: #0b1a2e; }
-    .si-5::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        repeating-linear-gradient(60deg, rgba(26,58,92,0.13) 0px, rgba(26,58,92,0.13) 2px, transparent 2px, transparent 20px),
-        repeating-linear-gradient(-60deg, rgba(79,195,247,0.06) 0px, rgba(79,195,247,0.06) 2px, transparent 2px, transparent 20px),
-        radial-gradient(ellipse at 30% 70%, rgba(245,166,35,0.08), transparent 50%);
-    }
-    .si-6 { background: #091520; }
-    .si-6::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        repeating-linear-gradient(90deg, rgba(26,58,92,0.19) 0px, rgba(26,58,92,0.19) 4px, transparent 4px, transparent 60px),
-        repeating-linear-gradient(0deg, transparent 0px, transparent 59px, rgba(26,58,92,0.06) 60px),
-        radial-gradient(circle at 50% 50%, rgba(79,195,247,0.06) 0%, transparent 60%);
-    }
-    .si-7 { background: #0c1f35; }
-    .si-7::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        repeating-linear-gradient(0deg, rgba(79,195,247,0.04) 0px, rgba(79,195,247,0.04) 1px, transparent 1px, transparent 16px),
-        repeating-linear-gradient(90deg, rgba(79,195,247,0.04) 0px, rgba(79,195,247,0.04) 1px, transparent 1px, transparent 16px),
-        radial-gradient(ellipse at 50% 30%, rgba(245,166,35,0.08), transparent 55%);
-    }
-    .si-8 { background: #081420; }
-    .si-8::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(circle at 20% 80%, rgba(79,195,247,0.12), transparent 40%),
-        radial-gradient(circle at 80% 20%, rgba(245,166,35,0.08), transparent 40%),
-        repeating-linear-gradient(30deg, rgba(26,58,92,0.1) 0px, rgba(26,58,92,0.1) 2px, transparent 2px, transparent 28px);
-    }
-    .si-9 { background: #0a1828; }
-    .si-9::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        repeating-linear-gradient(0deg, transparent 39px, rgba(26,58,92,0.08) 40px),
-        repeating-linear-gradient(90deg, transparent 39px, rgba(26,58,92,0.08) 40px),
-        radial-gradient(ellipse at 60% 40%, rgba(245,166,35,0.07), transparent 55%);
-    }
+    .svc-icon-wrap svg{width:24px;height:24px;color:var(--orange);}
+    .svc-card h3{font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.5rem;}
+    .svc-card p{color:var(--muted);font-size:0.875rem;line-height:1.65;}
+    @media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:600px){.services-grid{grid-template-columns:1fr;}}
 
-    /* Icon overlay on slide */
-    .slide-icon-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1;
+    /* ── PERCHE' ── */
+    #perche{background:var(--dark);}
+    .perche-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:1rem;}
+    .perche-visual{position:relative;}
+    .perche-card-big{
+      background:var(--dark2);border:1px solid rgba(255,107,0,0.15);
+      border-radius:20px;padding:2.5rem;
+      box-shadow:0 0 60px rgba(255,107,0,0.08);
     }
-    .slide-icon-overlay i {
-      font-size: 4rem;
-      opacity: 0.15;
-      color: #4fc3f7;
+    .perche-phone-big{
+      font-size:2rem;font-weight:900;color:#fff;letter-spacing:-0.5px;
+      display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;
     }
+    .perche-phone-icon{
+      width:50px;height:50px;border-radius:12px;background:var(--orange);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;
+      box-shadow:0 0 24px rgba(255,107,0,0.5);
+    }
+    .perche-phone-icon svg{width:26px;height:26px;color:#fff;}
+    .perche-card-sub{color:var(--muted);font-size:0.85rem;margin-bottom:2rem;}
+    .perche-btns{display:flex;flex-direction:column;gap:0.75rem;}
+    .perche-list{display:flex;flex-direction:column;gap:1.25rem;}
+    .perche-item{display:flex;gap:1rem;align-items:flex-start;}
+    .perche-dot{
+      width:36px;height:36px;border-radius:8px;
+      background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;
+    }
+    .perche-dot svg{width:18px;height:18px;color:var(--orange);}
+    .perche-item h4{font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:0.2rem;}
+    .perche-item p{color:var(--muted);font-size:0.85rem;line-height:1.6;}
+    @media(max-width:900px){.perche-wrap{grid-template-columns:1fr;gap:3rem;}.perche-visual{order:-1;}}
 
-    .carousel-counter {
-      position: absolute;
-      top: 14px; right: 14px;
-      background: rgba(10,22,40,0.85);
-      backdrop-filter: blur(8px);
-      border: 1px solid #1a3a5c;
-      border-radius: 8px;
-      padding: 4px 12px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #f5a623;
-      z-index: 2;
+    /* ── ZONE ── */
+    #zone{background:var(--dark2);}
+    .zone-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:3rem;}
+    .zone-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+    .zone-card{
+      background:var(--dark3);border:1px solid rgba(255,255,255,0.06);
+      border-radius:12px;padding:1.5rem 1.25rem;
+      transition:border-color 0.2s,box-shadow 0.2s;
     }
-    .carousel-hint {
-      position: absolute;
-      bottom: 14px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.72rem;
-      color: #8899bb;
-      background: rgba(10,22,40,0.65);
-      padding: 3px 10px;
-      border-radius: 100px;
-      white-space: nowrap;
-      z-index: 2;
-    }
-    .carousel-dots {
-      display: flex;
-      gap: 7px;
-      margin-top: 18px;
-      flex-wrap: wrap;
-    }
-    .carousel-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: #1a3a5c;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      padding: 0;
-    }
-    .carousel-dot.active {
-      background: #f5a623;
-      transform: scale(1.3);
-    }
-    .carousel-arrows {
-      display: flex;
-      gap: 10px;
-      margin-top: 18px;
-    }
-    .carousel-btn {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      background: #0d2040;
-      border: 1px solid #1a3a5c;
-      color: #ffffff;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      transition: background 0.2s, border-color 0.2s;
-    }
-    .carousel-btn:hover {
-      background: #112244;
-      border-color: rgba(79,195,247,0.3);
-    }
-    .carousel-content { display: flex; flex-direction: column; }
-    .slide-content { display: none; }
-    .slide-content.active { display: flex; flex-direction: column; gap: 16px; }
-    .slide-number {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: #f5a623;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .slide-title {
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-    }
-    .slide-desc { color: #8899bb; font-size: 0.95rem; line-height: 1.7; }
-    .slide-pills {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .slide-pill {
-      display: flex;
-      flex-direction: column;
-      background: #0a1628;
-      border: 1px solid #1a3a5c;
-      border-radius: 10px;
-      padding: 10px 16px;
-      min-width: 120px;
-    }
-    .pill-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      color: #8899bb;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 2px;
-    }
-    .pill-value {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #ffffff;
-    }
-    .slide-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #f5a623;
-      color: #0a1628;
-      padding: 12px 22px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.88rem;
-      text-decoration: none;
-      align-self: flex-start;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .slide-cta:hover { background: #e8951a; transform: translateY(-1px); }
-
-    /* ── DOVE OPERIAMO ── */
-    #dove-operiamo {
-      padding: 96px 0;
-      background: #112244;
-    }
-    .zone-cards {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
-      margin: 40px 0;
-    }
-    .zone-card {
-      background: #0d2040;
-      border: 1px solid #1a3a5c;
-      border-radius: 14px;
-      padding: 24px 16px;
-      text-align: center;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .zone-card:hover { border-color: rgba(79,195,247,0.3); transform: translateY(-3px); }
-    .zone-card.primary { border-color: rgba(79,195,247,0.18); }
-    .zone-card i {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      display: block;
-    }
-    .zone-card.primary i { color: #4fc3f7; }
-    .zone-card.secondary i { color: #1a3a5c; }
-    .zone-card-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #4fc3f7;
-      margin-bottom: 6px;
-    }
-    .zone-card-name {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #ffffff;
-    }
-    .zone-card.secondary .zone-card-name { color: #8899bb; }
-    .zone-btn-wrap { text-align: center; }
+    .zone-card.primary{border-color:rgba(255,107,0,0.2);background:rgba(255,107,0,0.04);}
+    .zone-card:hover{border-color:rgba(255,107,0,0.3);box-shadow:0 4px 20px rgba(0,0,0,0.3);}
+    .zone-pin{width:32px;height:32px;border-radius:8px;background:rgba(255,107,0,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;}
+    .zone-pin svg{width:16px;height:16px;color:var(--orange);}
+    .zone-card.primary .zone-pin{background:var(--orange);box-shadow:0 0 12px rgba(255,107,0,0.4);}
+    .zone-card.primary .zone-pin svg{color:#fff;}
+    .zone-card h4{font-size:0.9rem;font-weight:700;color:#fff;margin-bottom:0.2rem;}
+    .zone-badge{font-size:0.68rem;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--orange);}
+    @media(max-width:900px){.zone-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:500px){.zone-grid{grid-template-columns:1fr;}}
 
     /* ── ASSISTENZA ── */
-    #assistenza {
-      padding: 96px 0;
-      background: #0d1e35;
-      text-align: center;
+    #assistenza{
+      background:linear-gradient(135deg,#080C12 0%,#0D1825 50%,#080C12 100%);
+      position:relative;overflow:hidden;text-align:center;
     }
-    .assistenza-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #0d2040;
-      border: 1px solid #1a3a5c;
-      border-radius: 100px;
-      padding: 6px 16px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      color: #8899bb;
-      margin-bottom: 28px;
+    #assistenza::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse at center,rgba(255,107,0,0.08) 0%,transparent 65%);
     }
-    .assistenza-badge .dot-orange {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: #f5a623;
-      box-shadow: 0 0 8px #f5a623;
-      animation: pulse-orange 2s infinite;
+    .assist-inner{position:relative;z-index:1;}
+    .assist-badge{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.25);
+      color:var(--orange);padding:0.4rem 1rem;border-radius:100px;
+      font-size:0.75rem;font-weight:700;letter-spacing:0.5px;margin-bottom:1.75rem;
+      text-transform:uppercase;
     }
-    @keyframes pulse-orange {
-      0%, 100% { box-shadow: 0 0 8px #f5a623; }
-      50% { box-shadow: 0 0 18px #f5a623; }
+    .assist-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:1rem;letter-spacing:-0.5px;}
+    .assist-title span{color:var(--orange);text-shadow:0 0 40px rgba(255,107,0,0.4);}
+    .assist-sub{color:var(--muted);font-size:1rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.7;}
+    .assist-phone{
+      font-size:clamp(2.5rem,6vw,4rem);font-weight:900;color:#fff;
+      letter-spacing:-1px;margin-bottom:2.5rem;
+      text-shadow:0 0 40px rgba(255,255,255,0.1);
     }
-    #assistenza h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      margin-bottom: 16px;
+    .assist-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;}
+    .assist-pills{display:flex;justify-content:center;flex-wrap:wrap;gap:0.75rem;}
+    .assist-pill{
+      display:flex;align-items:center;gap:0.5rem;
+      background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);
+      color:var(--muted);padding:0.5rem 1rem;border-radius:100px;font-size:0.82rem;font-weight:500;
     }
-    .assistenza-sub {
-      color: #8899bb;
-      max-width: 580px;
-      margin: 0 auto 32px;
-    }
-    .phone-big {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 900;
-      color: #ffffff;
-      letter-spacing: -0.02em;
-      margin-bottom: 32px;
-      font-feature-settings: "tnum";
-    }
-    .assistenza-btns {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 40px;
-    }
-    .feature-pills {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .feature-pill {
-      background: #0d2040;
-      border: 1px solid #1a3a5c;
-      border-radius: 100px;
-      padding: 8px 18px;
-      font-size: 0.85rem;
-      color: #8899bb;
-      font-weight: 500;
-    }
+    .assist-pill svg{width:14px;height:14px;color:var(--orange);}
 
     /* ── CONTATTI ── */
-    #contatti {
-      padding: 96px 0;
-      background: #0a1628;
+    #contatti{background:var(--dark);}
+    .contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;margin-top:3.5rem;}
+    .contact-info-cards{display:flex;flex-direction:column;gap:1rem;}
+    .ccard{
+      background:var(--dark2);border:1px solid rgba(255,255,255,0.06);
+      border-radius:14px;padding:1.25rem 1.5rem;
+      display:flex;align-items:flex-start;gap:1rem;
+      transition:border-color 0.2s;
     }
-    .contatti-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 48px;
-      margin-top: 48px;
+    .ccard:hover{border-color:rgba(255,107,0,0.2);}
+    .ccard-icon{
+      width:42px;height:42px;border-radius:10px;
+      background:rgba(255,107,0,0.12);border:1px solid rgba(255,107,0,0.2);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;
     }
-    .contact-cards { display: flex; flex-direction: column; gap: 16px; }
-    .contact-card {
-      background: #0d2040;
-      border: 1px solid #1a3a5c;
-      border-radius: 14px;
-      padding: 22px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
+    .ccard-icon svg{width:20px;height:20px;color:var(--orange);}
+    .ccard .label{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:0.2rem;}
+    .ccard .value{font-size:0.95rem;font-weight:700;color:#fff;}
+    .ccard .value a{color:#fff;}
+    .ccard .sub{font-size:0.8rem;color:var(--muted);margin-top:0.1rem;}
+    .form-box{
+      background:var(--dark2);border:1px solid rgba(255,255,255,0.06);
+      border-radius:16px;padding:2.5rem;
     }
-    .contact-card-icon {
-      width: 44px; height: 44px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+    .fg{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1rem;}
+    .fg label{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:var(--muted);}
+    .fg input,.fg textarea,.fg select{
+      background:var(--dark3);border:1.5px solid rgba(255,255,255,0.08);
+      border-radius:8px;padding:0.8rem 1rem;
+      color:#fff;font-family:inherit;font-size:0.9rem;
+      transition:border-color 0.2s,box-shadow 0.2s;
     }
-    .icon-orange { background: rgba(245,166,35,0.1); color: #f5a623; }
-    .icon-cyan { background: rgba(79,195,247,0.1); color: #4fc3f7; }
-    .icon-green { background: rgba(34,197,94,0.1); color: #22c55e; }
-    .contact-card-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #8899bb;
-      margin-bottom: 4px;
+    .fg input::placeholder,.fg textarea::placeholder{color:rgba(122,143,166,0.6);}
+    .fg input:focus,.fg textarea:focus,.fg select:focus{
+      outline:none;border-color:var(--orange);
+      box-shadow:0 0 0 3px rgba(255,107,0,0.1);
     }
-    .contact-card-value {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #ffffff;
+    .fg select{appearance:none;cursor:pointer;}
+    .fg textarea{min-height:110px;resize:vertical;}
+    .fg select option{background:var(--dark3);}
+    .fcheck{display:flex;align-items:flex-start;gap:0.65rem;margin-bottom:0.75rem;font-size:0.82rem;color:var(--muted);cursor:pointer;line-height:1.5;}
+    .fcheck input[type=checkbox]{width:15px;height:15px;flex-shrink:0;margin-top:2px;accent-color:var(--orange);cursor:pointer;}
+    .fcheck a{color:var(--orange);}
+    .btn-submit-full{
+      width:100%;padding:0.95rem;
+      background:var(--orange);color:#fff;font-weight:700;font-size:1rem;
+      border:none;border-radius:10px;cursor:pointer;font-family:inherit;
+      box-shadow:0 0 20px rgba(255,107,0,0.35),0 0 50px rgba(255,107,0,0.15);
+      display:flex;align-items:center;justify-content:center;gap:0.6rem;
+      transition:all 0.25s;
     }
-    .contact-card-sub {
-      font-size: 0.85rem;
-      color: #8899bb;
-      margin-top: 2px;
-    }
-    .contact-card a {
-      color: #4fc3f7;
-      text-decoration: none;
-    }
-    .contact-card a:hover { text-decoration: underline; }
+    .btn-submit-full:hover{background:var(--orange-glow);box-shadow:0 0 32px rgba(255,107,0,0.5),0 0 80px rgba(255,107,0,0.2);transform:translateY(-1px);}
+    .form-success{display:none;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.3);color:#34D399;padding:1rem 1.25rem;border-radius:10px;margin-top:1rem;font-weight:600;font-size:0.9rem;}
+    @media(max-width:768px){.contact-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}}
 
-    /* Form */
-    .contact-form {
-      background: #0d2040;
-      border: 1px solid #1a3a5c;
-      border-radius: 16px;
-      padding: 32px;
+    /* ── FAQ ── */
+    #faq{background:var(--dark2);}
+    .faq-wrap{max-width:760px;margin-top:3rem;}
+    .faq-item{border-bottom:1px solid rgba(255,255,255,0.06);overflow:hidden;}
+    .faq-q{
+      width:100%;background:none;border:none;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:1.35rem 0;cursor:pointer;font-family:inherit;
+      font-size:0.95rem;font-weight:600;color:#fff;text-align:left;gap:1rem;
     }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 0;
-    }
-    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-    .form-group label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: #8899bb;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      background: #0a1628;
-      border: 1px solid #1a3a5c;
-      border-radius: 10px;
-      padding: 12px 16px;
-      color: #ffffff;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      transition: border-color 0.2s;
-      outline: none;
-      width: 100%;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus { border-color: #4fc3f7; }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: #4a5a72; }
-    .form-group select option { background: #0d2040; }
-    .form-group textarea { resize: vertical; min-height: 110px; }
-    .privacy-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .privacy-row input[type="checkbox"] {
-      width: 18px; height: 18px;
-      margin-top: 2px;
-      accent-color: #f5a623;
-      flex-shrink: 0;
-    }
-    .privacy-row label {
-      font-size: 0.78rem;
-      color: #8899bb;
-      line-height: 1.5;
-      cursor: pointer;
-    }
-    .btn-submit {
-      width: 100%;
-      background: #f5a623;
-      color: #0a1628;
-      border: none;
-      padding: 14px;
-      border-radius: 10px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 800;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      letter-spacing: 0.02em;
-    }
-    .btn-submit:hover { background: #e8951a; transform: translateY(-1px); }
-    .btn-submit:disabled { opacity: 0.65; cursor: default; transform: none; }
-    .form-success {
-      display: none;
-      background: rgba(34,197,94,0.1);
-      border: 1px solid rgba(34,197,94,0.25);
-      border-radius: 10px;
-      padding: 16px;
-      color: #22c55e;
-      font-weight: 600;
-      text-align: center;
-      margin-top: 16px;
-    }
-    .form-success.show { display: block; }
+    .faq-q:hover{color:var(--orange);}
+    .faq-chevron{width:20px;height:20px;color:var(--orange);flex-shrink:0;transition:transform 0.3s;}
+    .faq-item.open .faq-chevron{transform:rotate(180deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease;}
+    .faq-a-inner{padding:0 0 1.25rem;color:var(--muted);font-size:0.875rem;line-height:1.75;}
 
     /* ── FOOTER ── */
-    footer {
-      background: #060e1a;
-      border-top: 1px solid #1a3a5c;
-      padding: 48px 0 0;
+    footer{
+      background:var(--dark);
+      border-top:1px solid rgba(255,255,255,0.05);
+      padding:3.5rem 2rem 2rem;
     }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 40px;
-      padding-bottom: 40px;
-    }
-    .footer-brand { display: flex; align-items: flex-start; gap: 12px; }
-    .footer-brand svg { width: 36px; height: 36px; flex-shrink: 0; margin-top: 2px; }
-    .footer-brand-text h3 {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1.3;
-      margin-bottom: 4px;
-    }
-    .footer-brand-text p {
-      font-size: 0.78rem;
-      color: #8899bb;
-    }
-    .footer-piva {
-      font-size: 0.75rem;
-      color: #4a5a72;
-      margin-top: 8px;
-    }
-    .footer-nav h4 {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #8899bb;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .footer-nav ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-nav a {
-      color: #8899bb;
-      text-decoration: none;
-      font-size: 0.875rem;
-      transition: color 0.2s;
-    }
-    .footer-nav a:hover { color: #ffffff; }
-    .footer-contact h4 {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #8899bb;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .footer-contact a {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #8899bb;
-      text-decoration: none;
-      font-size: 0.875rem;
-      margin-bottom: 10px;
-      transition: color 0.2s;
-    }
-    .footer-contact a:hover { color: #ffffff; }
-    .footer-contact a i { color: #f5a623; width: 16px; }
-    .footer-divider {
-      border: none;
-      border-top: 1px solid rgba(26,58,92,0.3);
-    }
-    .footer-bottom {
-      padding: 20px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .footer-bottom p { font-size: 0.78rem; color: #4a5a72; }
-    .footer-bottom a { color: #8899bb; text-decoration: none; }
-    .footer-bottom a:hover { color: #ffffff; }
+    .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+    .footer-brand strong{color:#fff;font-size:1.1rem;font-weight:800;display:block;margin-bottom:0.25rem;}
+    .footer-brand .tagline{color:var(--orange);font-size:0.78rem;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:1rem;}
+    .footer-brand p{color:var(--muted);font-size:0.82rem;line-height:1.6;margin-bottom:0.3rem;}
+    .footer-col h4{color:rgba(255,255,255,0.5);font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1rem;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+    .footer-col a{color:var(--muted);font-size:0.85rem;transition:color 0.2s;}
+    .footer-col a:hover{color:var(--orange);}
+    .footer-bottom{max-width:1200px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.04);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;}
+    .footer-bottom span,.footer-bottom a{color:rgba(122,143,166,0.6);font-size:0.78rem;}
+    .footer-bottom a:hover{color:var(--orange);}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:2rem;}.footer-bottom{flex-direction:column;align-items:flex-start;}}
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
-      .zone-cards { grid-template-columns: repeat(3, 1fr); }
+    /* ── COOKIE BANNER ── */
+    #cookie-banner{
+      display:none;position:fixed;bottom:0;left:0;right:0;
+      background:rgba(13,18,25,0.97);backdrop-filter:blur(16px);
+      border-top:1px solid rgba(255,107,0,0.2);
+      padding:1.25rem 2rem;z-index:9999;
+      align-items:center;gap:2rem;flex-wrap:wrap;
     }
+    #cookie-banner p{color:var(--muted);font-size:0.82rem;line-height:1.5;flex:1;min-width:200px;}
+    #cookie-banner a{color:var(--orange);}
+    .cookie-btns{display:flex;gap:0.75rem;flex-shrink:0;}
+    #cookie-accept{background:var(--orange);color:#fff;border:none;padding:0.6rem 1.35rem;border-radius:8px;font-weight:700;font-size:0.82rem;cursor:pointer;font-family:inherit;box-shadow:0 0 14px rgba(255,107,0,0.4);}
+    #cookie-reject{background:rgba(255,255,255,0.05);color:var(--muted);border:1px solid rgba(255,255,255,0.1);padding:0.6rem 1.35rem;border-radius:8px;font-size:0.82rem;cursor:pointer;font-family:inherit;}
 
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-
-      .hero-cta-row { flex-direction: column; }
-      .btn-primary, .btn-outline { justify-content: center; }
-
-      .carousel-track {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-
-      .zone-cards { grid-template-columns: repeat(2, 1fr); }
-
-      .contatti-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-      .form-row { grid-template-columns: 1fr; }
-
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-    }
-
-    @media (max-width: 480px) {
-      .zone-cards { grid-template-columns: 1fr 1fr; }
-      #assistenza h2 { font-size: 1.8rem; }
-      .contact-form { padding: 20px; }
-      .feature-pills { gap: 8px; }
-      .feature-pill { font-size: 0.8rem; padding: 7px 14px; }
-    }
+    /* ── FADE IN ── */
+    .fi{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
+    .fi.vis{opacity:1;transform:translateY(0);}
+    .fi-d1{transition-delay:0.1s;}.fi-d2{transition-delay:0.2s;}.fi-d3{transition-delay:0.3s;}.fi-d4{transition-delay:0.4s;}.fi-d5{transition-delay:0.5s;}.fi-d6{transition-delay:0.6s;}
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════
-     NAVBAR
-══════════════════════════════════════════ -->
-<nav id="navbar">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="#" class="nav-brand">
-        <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 2L4 8v12c0 8.5 6.4 16.4 15 18.4C28.6 36.4 35 28.5 35 20V8L19 2Z" fill="#0d2040" stroke="#1a3a5c" stroke-width="1.5"/>
-          <path d="M14 18h4v-4h2v4h4v2h-4v4h-2v-4h-4v-2Z" fill="#f5a623"/>
-          <circle cx="19" cy="19" r="7" stroke="#4fc3f7" stroke-width="1" fill="none" opacity="0.5"/>
-        </svg>
-        <div class="nav-brand-text">
-          <span class="nav-brand-name">AZ IMPIANTI DI ELSAYED ABDELAZIZ</span>
-          <span class="nav-brand-sub">Impianti Idraulici</span>
-        </div>
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#cosa-facciamo">Cosa facciamo</a></li>
-        <li><a href="#dove-operiamo">Dove operiamo</a></li>
-        <li><a href="#assistenza">Assistenza 24/7</a></li>
-        <li><a href="#contatti">Contatti</a></li>
-        <li><a href="https://wa.me/393289725238" target="_blank" rel="noopener" class="btn-wa-nav"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-      </ul>
-
-      <button class="hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+<!-- NAVBAR -->
+<header>
+<nav id="navbar" aria-label="Navigazione principale">
+  <a href="#home" class="nav-logo" aria-label="AZ Impianti - Home">
+    <div class="logo-icon" aria-hidden="true">
+      <img src="img/logo.png" alt="Logo AZ Impianti" width="44" height="44"/>
     </div>
-  </div>
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <a href="#">Home</a>
-    <a href="#cosa-facciamo">Cosa facciamo</a>
-    <a href="#dove-operiamo">Dove operiamo</a>
-    <a href="#assistenza">Assistenza 24/7</a>
-    <a href="#contatti">Contatti</a>
-    <a href="https://wa.me/393289725238" target="_blank" rel="noopener" class="btn-wa-nav"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-  </div>
+    <div class="logo-text">
+      <strong>AZ Impianti</strong>
+      <span>Elsayed Abdelaziz — Monza</span>
+    </div>
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links" role="list">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#servizi">Servizi</a></li>
+    <li><a href="#zone">Zone</a></li>
+    <li><a href="#assistenza">Assistenza</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+    <li><a href="#contatti" class="btn-neon btn-sm" aria-label="Prenota intervento">Prenota ora</a></li>
+  </ul>
 </nav>
+</header>
 
-<!-- ══════════════════════════════════════════
-     HERO
-══════════════════════════════════════════ -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-pipes"></div>
-  <div class="hero-glow"></div>
-  <div class="container">
-    <div class="hero-content fade-in">
-      <div class="hero-badge">
-        <span class="dot"></span>
-        PRONTO INTERVENTO ATTIVO
+<main>
+
+<!-- HERO -->
+<section id="home" aria-label="Benvenuto in AZ Impianti">
+  <div class="pipe-bg"></div>
+  <!-- Pipe SVG decorativa -->
+  <svg class="pipe-visual" viewBox="0 0 700 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <rect x="100" y="80" width="500" height="60" rx="8" fill="#1C2A3A" stroke="#2A3F55" stroke-width="2"/>
+    <rect x="100" y="88" width="500" height="10" rx="3" fill="#243344"/>
+    <rect x="100" y="120" width="500" height="10" rx="3" fill="#162030"/>
+    <rect x="280" y="140" width="60" height="220" rx="8" fill="#1C2A3A" stroke="#2A3F55" stroke-width="2"/>
+    <rect x="288" y="140" width="10" height="220" rx="2" fill="#243344"/>
+    <rect x="330" y="140" width="10" height="220" rx="2" fill="#162030"/>
+    <rect x="500" y="140" width="60" height="160" rx="8" fill="#1C2A3A" stroke="#2A3F55" stroke-width="2"/>
+    <rect x="160" y="200" width="120" height="50" rx="8" fill="#1C2A3A" stroke="#2A3F55" stroke-width="2"/>
+    <circle cx="220" cy="225" r="18" fill="#243344" stroke="#2A3F55" stroke-width="2"/>
+    <circle cx="220" cy="225" r="8" fill="#1C2A3A"/>
+    <circle cx="310" cy="360" r="6" fill="#0A7CC1" opacity="0.8"/>
+    <circle cx="312" cy="370" r="4" fill="#0A7CC1" opacity="0.6"/>
+    <ellipse cx="310" cy="385" rx="18" ry="5" fill="#0A7CC1" opacity="0.15"/>
+  </svg>
+  <!-- Water drips -->
+  <div class="water-drip drip1"></div>
+  <div class="water-drip drip2"></div>
+  <div class="water-drip drip3"></div>
+  <div class="water-drop drop1"></div>
+  <div class="water-drop drop2"></div>
+  <div class="water-drop drop3"></div>
+  <div class="puddle"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-glow2" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><div class="badge-dot"></div>Pronto intervento attivo</div>
+    <div class="hero-phone">
+      <div class="phone-icon-wrap" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       </div>
-      <h1 class="hero-h1">
-        Impianti Idraulici<br>
-        <span class="cyan">e Pronto Intervento</span><br>
-        24/7
-      </h1>
-      <p class="hero-subtitle">
-        AZ Impianti di Elsayed Abdelaziz offre impianti, manutenzioni, riparazioni e assistenza tecnica in tutta la Lombardia.
-      </p>
-      <p class="hero-zone">Operativi su Monza, Monza Brianza, Lodi e provincia.</p>
-      <div class="hero-cta-row">
-        <a href="tel:+393289725238" class="btn-primary">
-          📞 RICEVI ASSISTENZA ORA
-        </a>
-        <a href="#contatti" class="btn-outline">
-          📋 RICHIEDI PREVENTIVO
-        </a>
-        <a href="https://wa.me/393289725238" target="_blank" rel="noopener" class="btn-outline">
-          💬 WHATSAPP
-        </a>
-      </div>
+      +39 328 972 5238
     </div>
-  </div>
-  <div class="hero-scroll" aria-hidden="true">
-    <div class="hero-scroll-line"></div>
+    <h1>Idraulico a Monza.<br><em>Pronto intervento</em><br>e impianti 24/7.</h1>
+    <p class="hero-sub">AZ Impianti di Elsayed Abdelaziz offre <strong>interventi rapidi</strong> per guasti, perdite e installazioni in tutta la Lombardia. Privati, aziende, condomini.</p>
+    <div class="hero-btns">
+      <a href="tel:+393289725238" class="btn-neon" aria-label="Chiama AZ Impianti ora">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Chiama ora
+      </a>
+      <a href="https://wa.me/393289725238" class="btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="Scrivi su WhatsApp ad AZ Impianti">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.852L.057 23.852a.5.5 0 00.638.635l6.098-1.465A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.916 0-3.713-.504-5.265-1.385l-.375-.22-3.883.934.97-3.79-.244-.389A9.937 9.937 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+      <a href="#contatti" class="btn-ghost" aria-label="Richiedi preventivo gratuito">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Preventivo gratuito
+      </a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Risposta rapida</div>
+      <div class="trust-item"><svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Preventivo gratuito</div>
+      <div class="trust-item"><svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Tutta la Lombardia</div>
+    </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     COSA FACCIAMO
-══════════════════════════════════════════ -->
-<section id="cosa-facciamo">
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat fi"><div class="stat-num">24/7</div><div class="stat-label">Disponibilità</div></div>
+    <div class="stat fi fi-d1"><div class="stat-num">10+</div><div class="stat-label">Anni esperienza</div></div>
+    <div class="stat fi fi-d2"><div class="stat-num">9</div><div class="stat-label">Servizi offerti</div></div>
+    <div class="stat fi fi-d3"><div class="stat-num">MB</div><div class="stat-label">e tutta Lombardia</div></div>
+  </div>
+</div>
+
+<!-- SERVIZI -->
+<section id="servizi" aria-labelledby="servizi-title">
   <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-label">I Nostri Servizi</span>
-      <h2>Cosa facciamo</h2>
-      <p>Interventi tecnici per impianti, manutenzioni e pronto intervento.</p>
+    <p class="section-label">I NOSTRI SERVIZI</p>
+    <h2 class="section-title" id="servizi-title">Cosa facciamo</h2>
+    <p class="section-sub">Interventi tecnici per impianti, manutenzioni e pronto intervento in tutta la Lombardia.</p>
+    <div class="services-grid">
+      <article class="svc-card fi">
+        <img src="img/servizi/inox.jpg" alt="Impianti in acciaio inox AZ Impianti Monza" class="svc-img" loading="lazy"/>
+        <div class="svc-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/><circle cx="19" cy="6" r="2.5" fill="currentColor" stroke="none"/><circle cx="5" cy="18" r="2.5" fill="currentColor" stroke="none"/></svg></div>
+        <h3>Impianti in acciaio inox</h3>
+        <p>Realizzazione completa di impianti idraulici in acciaio inox con raccordi a pressare, per ambienti civili e industriali.</p>
+      </article>
+      <article class="svc-card fi fi-d1">
+        <img src="img/servizi/bagno.jpg" alt="Sanitari e rubinetteria di design AZ Impianti Monza" class="svc-img" loading="lazy"/>
+        <div class="svc-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12s2.545-5 7-5c4.454 0 7 5 7 5s-2.546 5-7 5c-4.455 0-7-5-7-5z"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><path d="M3 7V5a2 2 0 012-2h14a2 2 0 012 2v2M3 17v2a2 2 0 002 2h14a2 2 0 002-2v-2"/></svg></div>
+        <h3>Sanitari e rubinetteria di design</h3>
+        <p>Installazione di lavabi, piatti doccia, rubinetteria su misura. Finitura scarichi e messa in opera con massima cura estetica.</p>
+      </article>
+      <article class="svc-card fi fi-d2">
+        <img src="img/servizi/pompa-calore.jpg" alt="Pompe di calore AZ Impianti Monza" class="svc-img" loading="lazy"/>
+        <div class="svc-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 18.66l-1.41 1.41M21 12h-2M5 12H3M18.66 18.66l-1.41-1.41M6.75 6.75L5.34 5.34M12 19v2M12 3V1"/></svg></div>
+        <h3>Pompe di calore e accumulo</h3>
+        <p>Installazione e collaudo di pompe di calore aria-acqua abbinate a serbatoi di accumulo ad alta capacità.</p>
+      </article>
+      <article class="svc-card fi fi-d3">
+        <img src="img/servizi/centrale-termica.jpg" alt="Centrali termiche AZ Impianti Monza" class="svc-img" loading="lazy"/>
+        <div class="svc-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Centrali termiche complete</h3>
+        <p>Progettazione e installazione di centrali termiche complete, dal gas o solare termico ai collettori di distribuzione.</p>
+      </article>
+      <article class="svc-card fi fi-d4">
+        <img src="img/servizi/riscaldamento-pavimento.jpg" alt="Riscaldamento a pavimento AZ Impianti Monza" class="svc-img" loading="lazy"/>
+        <div class="svc-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>Riscaldamento a pavimento</h3>
+        <p>Collettori multicircuito e tubi multistrato. Bilanciamento idraulico, collaudo a pressione e integrazione con pompa di calore.</p>
+      </article>
+      <article class="svc-card fi fi-d5">
+        <img src="img/servizi/samsung.jpg" alt="Pompe di calore Samsung AZ Impianti Monza" class="svc-img" loading="lazy"/>
+        <div class="svc-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg></div>
+        <h3>Pompe di calore Samsung</h3>
+        <p>Configurazione e messa in servizio con pannello di controllo integrato. Curve climatiche e parametri di efficienza energetica.</p>
+      </article>
     </div>
+  </div>
+</section>
 
-    <div class="carousel-wrapper fade-in">
-      <div class="carousel-track">
-
-        <!-- IMAGE COLUMN -->
-        <div class="carousel-image-area">
-          <div class="carousel-image" id="carousel-image-wrap">
-            <div class="slide-image si-1 active"><div class="slide-icon-overlay"><i class="fas fa-water"></i></div></div>
-            <div class="slide-image si-2"><div class="slide-icon-overlay"><i class="fas fa-shower"></i></div></div>
-            <div class="slide-image si-3"><div class="slide-icon-overlay"><i class="fas fa-thermometer-half"></i></div></div>
-            <div class="slide-image si-4"><div class="slide-icon-overlay"><i class="fas fa-fire"></i></div></div>
-            <div class="slide-image si-5"><div class="slide-icon-overlay"><i class="fas fa-cogs"></i></div></div>
-            <div class="slide-image si-6"><div class="slide-icon-overlay"><i class="fas fa-grip-lines-vertical"></i></div></div>
-            <div class="slide-image si-7"><div class="slide-icon-overlay"><i class="fas fa-th"></i></div></div>
-            <div class="slide-image si-8"><div class="slide-icon-overlay"><i class="fas fa-microchip"></i></div></div>
-            <div class="slide-image si-9"><div class="slide-icon-overlay"><i class="fas fa-project-diagram"></i></div></div>
-
-            <div class="carousel-counter" id="carousel-counter">01 / 09</div>
-            <div class="carousel-hint" aria-hidden="true">tocca per scorrere</div>
+<!-- PERCHE' -->
+<section id="perche" aria-labelledby="perche-title">
+  <div class="container">
+    <div class="perche-wrap">
+      <div>
+        <p class="section-label">PERCH&Eacute; SCEGLIERCI</p>
+        <h2 class="section-title" id="perche-title">La differenza che senti dal primo intervento</h2>
+        <div class="perche-list" style="margin-top:2rem;">
+          <div class="perche-item fi">
+            <div class="perche-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+            <div><h4>Interventi rapidi e puntuali</h4><p>Rispondiamo velocemente e rispettiamo gli orari concordati. Nessuna perdita di tempo.</p></div>
           </div>
-
-          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-top:18px;">
-            <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Seleziona servizio">
-              <button class="carousel-dot active" data-index="0" role="tab" aria-selected="true" aria-label="Servizio 1"></button>
-              <button class="carousel-dot" data-index="1" role="tab" aria-selected="false" aria-label="Servizio 2"></button>
-              <button class="carousel-dot" data-index="2" role="tab" aria-selected="false" aria-label="Servizio 3"></button>
-              <button class="carousel-dot" data-index="3" role="tab" aria-selected="false" aria-label="Servizio 4"></button>
-              <button class="carousel-dot" data-index="4" role="tab" aria-selected="false" aria-label="Servizio 5"></button>
-              <button class="carousel-dot" data-index="5" role="tab" aria-selected="false" aria-label="Servizio 6"></button>
-              <button class="carousel-dot" data-index="6" role="tab" aria-selected="false" aria-label="Servizio 7"></button>
-              <button class="carousel-dot" data-index="7" role="tab" aria-selected="false" aria-label="Servizio 8"></button>
-              <button class="carousel-dot" data-index="8" role="tab" aria-selected="false" aria-label="Servizio 9"></button>
-            </div>
-            <div class="carousel-arrows">
-              <button class="carousel-btn" id="prev-btn" aria-label="Servizio precedente"><i class="fas fa-chevron-left"></i></button>
-              <button class="carousel-btn" id="next-btn" aria-label="Servizio successivo"><i class="fas fa-chevron-right"></i></button>
-            </div>
+          <div class="perche-item fi fi-d1">
+            <div class="perche-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+            <div><h4>Esperienza su ogni tipo di impianto</h4><p>Anni di lavoro su impianti civili e industriali, dai piccoli interventi alle grandi installazioni.</p></div>
+          </div>
+          <div class="perche-item fi fi-d2">
+            <div class="perche-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+            <div><h4>Preventivi chiari senza sorprese</h4><p>Trasparenza totale sui costi prima di iniziare. Nessun extra imprevisto in fattura.</p></div>
+          </div>
+          <div class="perche-item fi fi-d3">
+            <div class="perche-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div><h4>Assistenza diretta senza intermediari</h4><p>Parli direttamente con il professionista che interviene. Rapporto diretto e di fiducia.</p></div>
           </div>
         </div>
-
-        <!-- CONTENT COLUMN -->
-        <div class="carousel-content" id="carousel-content">
-
-          <div class="slide-content active">
-            <div class="slide-number">SERVIZIO 01 / 09</div>
-            <h3 class="slide-title">Impianti in acciaio inox</h3>
-            <p class="slide-desc">Realizzazione completa di impianti idraulici in acciaio inox con raccordi a pressare. Tubazioni a vista o incassate, fissate a parete con collari professionali per ambienti industriali, commerciali e residenziali di pregio.</p>
-            <div class="slide-pills">
-              <div class="slide-pill"><span class="pill-label">Disponibilità</span><span class="pill-value">Lun-Dom</span></div>
-              <div class="slide-pill"><span class="pill-label">Area</span><span class="pill-value">Lombardia</span></div>
-            </div>
-            <a href="tel:+393289725238" class="slide-cta"><i class="fas fa-phone"></i> Richiedi intervento</a>
-          </div>
-
-          <div class="slide-content">
-            <div class="slide-number">SERVIZIO 02 / 09</div>
-            <h3 class="slide-title">Sanitari e rubinetteria di design</h3>
-            <p class="slide-desc">Installazione di lavabi, piatti doccia e rubinetteria di design su misura. Finitura degli scarichi, collegamento agli impianti esistenti e messa in opera di elementi di arredo bagno con massima cura estetica.</p>
-            <div class="slide-pills">
-              <div class="slide-pill"><span class="pill-label">Disponibilità</span><span class="pill-value">Lun-Dom</span></div>
-              <div class="slide-pill"><span class="pill-label">Area</span><span class="pill-value">Lombardia</span></div>
-            </div>
-            <a href="tel:+393289725238" class="slide-cta"><i class="fas fa-phone"></i> Richiedi intervento</a>
-          </div>
-
-          <div class="slide-content">
-            <div class="slide-number">SERVIZIO 03 / 09</div>
-            <h3 class="slide-title">Pompe di calore e accumulo</h3>
-            <p class="slide-desc">Installazione e collaudo di pompe di calore aria-acqua abbinate a serbatoi di accumulo ad alta capacità. Integrazione con impianti di riscaldamento esistenti e configurazione dei parametri di funzionamento.</p>
-            <div class="slide-pills">
-              <div class="slide-pill"><span class="pill-label">Disponibilità</span><span class="pill-value">Lun-Dom</span></div>
-              <div class="slide-pill"><span class="pill-label">Area</span><span class="pill-value">Lombardia</span></div>
-            </div>
-            <a href="tel:+393289725238" class="slide-cta"><i class="fas fa-phone"></i> Richiedi intervento</a>
-          </div>
-
-          <div class="slide-content">
-            <div class="slide-number">SERVIZIO 04 / 09</div>
-            <h3 class="slide-title">Centrali termiche — circuiti idraulici</h3>
-            <p class="slide-desc">Realizzazione dei circuiti idraulici interni alle centrali termiche: collegamento caldaia-accumulo, valvole di sicurezza, manometri, circolatori e isolamento termico delle tubazioni con guaine anticondensa.</p>
-            <div class="slide-pills">
-              <div class="slide-pill"><span class="pill-label">Disponibilità</span><span class="pill-value">Lun-Dom</span></div>
-              <div class="slide-pill"><span class="pill-label">Area</span><span class="pill-value">Lombardia</span></div>
-            </div>
-            <a href="tel:+393289725238" class="slide-cta"><i class="fas fa-phone"></i> Richiedi intervento</a>
-          </div>
-
-          <div class="slide-content">
-            <div class="slide-number">SERVIZIO 05 / 09</div>
-            <h3 class="slide-title">Centrali termiche — impianto completo</h3>
-            <p class="slide-desc">Progettazione e installazione di centrali termiche complete. Dall'arrivo del gas o del solare termico fino ai collettori di distribuzione, con impianto elettrico di comando e supervisione del funzionamento.</p>
-            <div class="slide-pills">
-              <div class="slide-pill"><span class="pill-label">Disponibilità</span><span class="pill-value">24/7</span></div>
-              <div class="slide-pill"><span class="pill-label">Area</span><span class="pill-value">Lombardia</span></div>
-            </div>
-            <a href="tel:+393289725238" class="slide-cta"><i class="fas fa-phone"></i> Richiedi intervento</a>
-          </div>
-
-          <div class="slide-content">
-            <div class="slide-number">SERVIZIO 06 / 09</div>
-            <h3 class="slide-title">Distribuzione tubazioni a parete</h3>
-            <p class="slide-desc">Posa e fissaggio di colonne di distribuzione idrica in acciaio inox con raccordi a pressare e collari a scomparsa. Lavorazioni eseguite a regola d'arte per impianti civili, condomini e strutture industriali.</p>
-            <div class="slide-pills">
-              <div class="slide-pill"><span class="pill-label">Disponibilità</span><span class="pill-value">Lun-Dom</span></div>
-              <div class="slide-pill"><span class="pill-label">Area</span><span class="pill-value">Lombardia</span></div>
-            </div>
-            <a href="tel:+393289725238" class="slide-cta"><i class="fas fa-phone"></i> Richiedi intervento</a>
-          </div>
-
-          <div class="slide-content">
-            <div class="slide-number">SERVIZIO 07 / 09</div>
-            <h3 class="slide-title">Impianti di riscaldamento a pavimento</h3>
-            <p class="slide-desc">Installazione di impianti radianti a pavimento con collettori multicircuito e tubi multistrato. Bilanciamento idraulico dei circuiti, collaudo a pressione e integrazione con pompa di calore o caldaia a condensazione.</p>
-            <div class="slide-pills">
-              <div class="slide-pill"><span class="pill-label">Disponibilità</span><span class="pill-value">Lun-Dom</span></div>
-              <div class="slide-pill"><span class="pill-label">Area</span><span class="pill-value">Lombardia</span></div>
-            </div>
-            <a href="tel:+393289725238" class="slide-cta"><i class="fas fa-phone"></i> Richiedi intervento</a>
-          </div>
-
-          <div class="slide-content">
-            <div class="slide-number">SERVIZIO 08 / 09</div>
-            <h3 class="slide-title">Pompe di calore Samsung — configurazione</h3>
-            <p class="slide-desc">Configurazione e messa in servizio di pompe di calore Samsung con pannello di controllo integrato. Impostazione delle curve climatiche, dei setpoint di temperatura e dei parametri di efficienza energetica.</p>
-            <div class="slide-pills">
-              <div class="slide-pill"><span class="pill-label">Disponibilità</span><span class="pill-value">Lun-Dom</span></div>
-              <div class="slide-pill"><span class="pill-label">Area</span><span class="pill-value">Lombardia</span></div>
-            </div>
-            <a href="tel:+393289725238" class="slide-cta"><i class="fas fa-phone"></i> Richiedi intervento</a>
-          </div>
-
-          <div class="slide-content">
-            <div class="slide-number">SERVIZIO 09 / 09</div>
-            <h3 class="slide-title">Collettori e pannelli di distribuzione</h3>
-            <p class="slide-desc">Realizzazione di pannelli di distribuzione con collettori multipli per impianti di riscaldamento a pavimento. Ogni circuito è dotato di flussimetro, valvola di regolazione e raccordi a tenuta garantita.</p>
-            <div class="slide-pills">
-              <div class="slide-pill"><span class="pill-label">Disponibilità</span><span class="pill-value">Lun-Dom</span></div>
-              <div class="slide-pill"><span class="pill-label">Area</span><span class="pill-value">Lombardia</span></div>
-            </div>
-            <a href="tel:+393289725238" class="slide-cta"><i class="fas fa-phone"></i> Richiedi intervento</a>
-          </div>
-
-        </div><!-- /carousel-content -->
-      </div><!-- /carousel-track -->
-    </div><!-- /carousel-wrapper -->
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     DOVE OPERIAMO
-══════════════════════════════════════════ -->
-<section id="dove-operiamo">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-label">Copertura Territoriale</span>
-      <h2>Dove operiamo</h2>
-      <p>AZ Impianti opera in tutta la Lombardia, con particolare presenza su Monza, Monza Brianza e Lodi.</p>
-    </div>
-
-    <div class="zone-cards fade-in">
-      <div class="zone-card primary">
-        <i class="fas fa-map-marker-alt"></i>
-        <div class="zone-card-label">Zona Primaria</div>
-        <div class="zone-card-name">Monza</div>
       </div>
-      <div class="zone-card primary">
-        <i class="fas fa-map-marker-alt"></i>
-        <div class="zone-card-label">Zona Primaria</div>
-        <div class="zone-card-name">Monza Brianza</div>
-      </div>
-      <div class="zone-card primary">
-        <i class="fas fa-map-marker-alt"></i>
-        <div class="zone-card-label">Zona Primaria</div>
-        <div class="zone-card-name">Lodi</div>
-      </div>
-      <div class="zone-card secondary">
-        <i class="fas fa-map-marker-alt"></i>
-        <div class="zone-card-name">Provincia di Lodi</div>
-      </div>
-      <div class="zone-card secondary">
-        <i class="fas fa-map-marker-alt"></i>
-        <div class="zone-card-name">Lombardia</div>
-      </div>
-    </div>
-
-    <div class="zone-btn-wrap fade-in">
-      <a href="#contatti" class="btn-outline">Verifica disponibilità nella tua zona ›</a>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     ASSISTENZA 24/7
-══════════════════════════════════════════ -->
-<section id="assistenza">
-  <div class="container">
-    <div class="fade-in">
-      <div class="assistenza-badge">
-        <span class="dot-orange"></span>
-        SERVIZIO ATTIVO ORA
-      </div>
-      <h2>Assistenza attiva <span class="orange">24 ore su 24</span></h2>
-      <p class="assistenza-sub">
-        Per guasti, urgenze, perdite o problemi agli impianti, AZ Impianti è disponibile 24/7 per offrire supporto rapido e professionale.
-      </p>
-      <div class="phone-big">+39 328 972 5238</div>
-      <div class="assistenza-btns">
-        <a href="tel:+393289725238" class="btn-primary">📞 Chiama ora</a>
-        <a href="https://wa.me/393289725238" target="_blank" rel="noopener" class="btn-outline">💬 Scrivi su WhatsApp</a>
-      </div>
-      <div class="feature-pills">
-        <div class="feature-pill">⚡ Risposta rapida</div>
-        <div class="feature-pill">🕐 Interventi su richiesta</div>
-        <div class="feature-pill">📋 Preventivo su richiesta</div>
-        <div class="feature-pill">👥 Supporto per privati e aziende</div>
+      <div class="perche-visual fi">
+        <div class="perche-card-big">
+          <div class="perche-phone-big">
+            <div class="perche-phone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+            +39 328 972 5238
+          </div>
+          <p class="perche-card-sub">Per guasti, urgenze e preventivi. Disponibile tutti i giorni.</p>
+          <div class="perche-btns">
+            <a href="tel:+393289725238" class="btn-neon" aria-label="Chiama AZ Impianti">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              Chiama ora
+            </a>
+            <a href="https://wa.me/393289725238" class="btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="Scrivi su WhatsApp">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.852L.057 23.852a.5.5 0 00.638.635l6.098-1.465A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.916 0-3.713-.504-5.265-1.385l-.375-.22-3.883.934.97-3.79-.244-.389A9.937 9.937 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     CONTATTI
-══════════════════════════════════════════ -->
-<section id="contatti">
+<!-- ZONE -->
+<section id="zone" aria-labelledby="zone-title">
   <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-label">Contattaci</span>
-      <h2>Richiedi assistenza o preventivo</h2>
-      <p>Contatta AZ Impianti per un intervento, una manutenzione o un preventivo su richiesta.</p>
+    <div class="zone-header">
+      <div>
+        <p class="section-label">COPERTURA TERRITORIALE</p>
+        <h2 class="section-title" id="zone-title">Dove operiamo</h2>
+        <p class="section-sub">Monza, Brianza e tutta la Lombardia.</p>
+      </div>
+      <a href="#contatti" class="btn-ghost" aria-label="Verifica disponibilità nella tua zona">Verifica la tua zona &rsaquo;</a>
     </div>
+    <div class="zone-grid">
+      <div class="zone-card primary fi">
+        <div class="zone-pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h4>Monza</h4><div class="zone-badge">Zona primaria</div>
+      </div>
+      <div class="zone-card primary fi fi-d1">
+        <div class="zone-pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h4>Monza Brianza</h4><div class="zone-badge">Zona primaria</div>
+      </div>
+      <div class="zone-card primary fi fi-d2">
+        <div class="zone-pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h4>Lodi</h4><div class="zone-badge">Zona primaria</div>
+      </div>
+      <div class="zone-card fi fi-d3">
+        <div class="zone-pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h4>Provincia di Lodi</h4>
+      </div>
+      <div class="zone-card fi fi-d4">
+        <div class="zone-pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h4>Milano e provincia</h4>
+      </div>
+      <div class="zone-card fi fi-d5">
+        <div class="zone-pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h4>Tutta la Lombardia</h4>
+      </div>
+      <div class="zone-card fi fi-d6" style="grid-column:span 2;">
+        <div class="zone-pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+        <h4 style="font-size:0.85rem;color:var(--muted);">Comune non in lista? Contattaci — interveniamo ovunque in Lombardia su richiesta.</h4>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="contatti-grid fade-in">
-      <!-- LEFT -->
-      <div class="contact-cards">
-        <div class="contact-card">
-          <div class="contact-card-icon icon-orange">
-            <i class="fas fa-phone"></i>
-          </div>
-          <div>
-            <div class="contact-card-label">Telefono</div>
-            <div class="contact-card-value">+39 328 972 5238</div>
-          </div>
+<!-- ASSISTENZA 24/7 -->
+<section id="assistenza" aria-labelledby="assist-title">
+  <div class="container assist-inner">
+    <div class="assist-badge"><span class="badge-dot"></span>Servizio attivo ora</div>
+    <h2 class="assist-title" id="assist-title">Assistenza attiva<br><span>24 ore su 24</span></h2>
+    <p class="assist-sub">Per guasti, urgenze, perdite o problemi agli impianti, AZ Impianti &egrave; disponibile per offrire supporto rapido e professionale.</p>
+    <div class="assist-phone">+39 328 972 5238</div>
+    <div class="assist-btns">
+      <a href="tel:+393289725238" class="btn-neon" aria-label="Chiama AZ Impianti ora">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Chiama ora
+      </a>
+      <a href="https://wa.me/393289725238" class="btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="Scrivi su WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.852L.057 23.852a.5.5 0 00.638.635l6.098-1.465A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.916 0-3.713-.504-5.265-1.385l-.375-.22-3.883.934.97-3.79-.244-.389A9.937 9.937 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Scrivi su WhatsApp
+      </a>
+    </div>
+    <div class="assist-pills">
+      <div class="assist-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Risposta rapida</div>
+      <div class="assist-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Interventi su richiesta</div>
+      <div class="assist-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Preventivo gratuito</div>
+      <div class="assist-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>Privati e aziende</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <p class="section-label">DOMANDE FREQUENTI</p>
+    <h2 class="section-title" id="faq-title">Hai domande?</h2>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Quanto costa un idraulico a Monza?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a" role="region"><div class="faq-a-inner">Il costo varia in base al tipo di intervento. Offriamo sopralluogo e preventivo gratuito senza impegno. Contattaci per un&apos;offerta personalizzata.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Fate pronto intervento idraulico urgente?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a" role="region"><div class="faq-a-inner">S&igrave;, interveniamo rapidamente per guasti, perdite e emergenze a Monza e provincia. Contattaci subito per una risposta veloce.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Lavorate anche per aziende e attivit&agrave; commerciali?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a" role="region"><div class="faq-a-inner">S&igrave;, operiamo per privati, negozi, uffici e realt&agrave; industriali in Lombardia. Possiamo gestire sia interventi singoli che contratti di manutenzione programmata.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Vi occupate di impianti idraulici completi?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a" role="region"><div class="faq-a-inner">S&igrave;, dalla progettazione all&apos;installazione per nuove costruzioni e ristrutturazioni. Seguiamo ogni fase fino al collaudo finale.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Posso contattarvi su WhatsApp?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a" role="region"><div class="faq-a-inner">Assolutamente s&igrave;. Scrivi al nostro numero +39 328 972 5238 su WhatsApp per una risposta rapida. &Egrave; il modo pi&ugrave; veloce per ricevere assistenza e richiedere un preventivo.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+<section id="contatti" aria-labelledby="contatti-title">
+  <div class="container">
+    <p class="section-label">CONTATTACI</p>
+    <h2 class="section-title" id="contatti-title">Richiedi assistenza o preventivo</h2>
+    <p class="section-sub">Compila il modulo o contattaci direttamente. Risposta garantita entro poche ore.</p>
+    <div class="contact-grid">
+      <div class="contact-info-cards">
+        <div class="ccard">
+          <div class="ccard-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><p class="label">Telefono</p><p class="value"><a href="tel:+393289725238" aria-label="Chiama AZ Impianti">+39 328 972 5238</a></p><p class="sub">Lun&ndash;Dom, sempre disponibili</p></div>
         </div>
-        <div class="contact-card">
-          <div class="contact-card-icon icon-cyan">
-            <i class="fab fa-whatsapp"></i>
-          </div>
-          <div>
-            <div class="contact-card-label">WhatsApp</div>
-            <div class="contact-card-value">
-              <a href="https://wa.me/393289725238" target="_blank" rel="noopener">Scrivi su WhatsApp</a>
-            </div>
-          </div>
+        <div class="ccard">
+          <div class="ccard-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.852L.057 23.852a.5.5 0 00.638.635l6.098-1.465A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.916 0-3.713-.504-5.265-1.385l-.375-.22-3.883.934.97-3.79-.244-.389A9.937 9.937 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg></div>
+          <div><p class="label">WhatsApp</p><p class="value"><a href="https://wa.me/393289725238" target="_blank" rel="noopener noreferrer" aria-label="Scrivi su WhatsApp">Scrivi su WhatsApp</a></p></div>
         </div>
-        <div class="contact-card">
-          <div class="contact-card-icon icon-green">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div>
-            <div class="contact-card-label">Zona Operativa</div>
-            <div class="contact-card-value">Lombardia</div>
-            <div class="contact-card-sub">Monza, Monza Brianza, Lodi</div>
-          </div>
+        <div class="ccard">
+          <div class="ccard-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><p class="label">Email</p><p class="value" style="font-size:0.82rem;"><a href="mailto:abdelaziz@azimpiantidielsayedabdelaziz.com" aria-label="Email AZ Impianti">abdelaziz@azimpianti<wbr>dielsayedabdelaziz.com</a></p></div>
+        </div>
+        <div class="ccard">
+          <div class="ccard-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><p class="label">Sede</p><p class="value">Via Brembo 1</p><p class="sub">20900 Monza (MB)</p></div>
         </div>
       </div>
-
-      <!-- RIGHT: form -->
-      <div class="contact-form">
-        <form id="contact-form" novalidate>
+      <div class="form-box fi">
+        <form action="mailto:abdelaziz@azimpiantidielsayedabdelaziz.com" method="post" enctype="text/plain" id="cform" novalidate>
           <div class="form-row">
-            <div class="form-group">
-              <label for="nome">Nome</label>
-              <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required />
-            </div>
-            <div class="form-group">
-              <label for="telefono">Telefono</label>
-              <input type="tel" id="telefono" name="telefono" placeholder="+39 000 000 0000" required />
-            </div>
+            <div class="fg"><label for="nome">Nome *</label><input type="text" id="nome" name="Nome" placeholder="Il tuo nome" required aria-required="true"/></div>
+            <div class="fg"><label for="tel">Telefono *</label><input type="tel" id="tel" name="Telefono" placeholder="+39 ..." required aria-required="true"/></div>
           </div>
           <div class="form-row">
-            <div class="form-group">
-              <label for="zona">Zona</label>
-              <input type="text" id="zona" name="zona" placeholder="Comune o provincia" />
-            </div>
-            <div class="form-group">
+            <div class="fg"><label for="zona">Zona</label><input type="text" id="zona" name="Zona" placeholder="Es: Monza, Lodi..."/></div>
+            <div class="fg">
               <label for="tipo">Tipo di intervento</label>
-              <select id="tipo" name="tipo">
+              <select id="tipo" name="Intervento" aria-label="Tipo di intervento">
                 <option value="">Seleziona...</option>
+                <option>Pronto intervento urgente</option>
                 <option>Impianti idraulici</option>
                 <option>Sanitari e rubinetteria</option>
-                <option>Pompe di calore</option>
+                <option>Pompe di calore / HVAC</option>
                 <option>Centrali termiche</option>
                 <option>Riscaldamento a pavimento</option>
-                <option>Pronto intervento</option>
+                <option>Manutenzione</option>
+                <option>Preventivo</option>
                 <option>Altro</option>
               </select>
             </div>
           </div>
-          <div class="form-group">
-            <label for="messaggio">Messaggio</label>
-            <textarea id="messaggio" name="messaggio" placeholder="Descrivi brevemente la tua richiesta..."></textarea>
-          </div>
-          <div class="privacy-row">
-            <input type="checkbox" id="privacy" name="privacy" required />
-            <label for="privacy">Ho letto l'Informativa Privacy e autorizzo il trattamento dei dati personali ai sensi del D.Lgs. 196/2003 e GDPR 679/2016.</label>
-          </div>
-          <button type="submit" class="btn-submit">Invia richiesta</button>
-          <div class="form-success" id="form-success" aria-live="polite">
-            ✓ Richiesta inviata! Ti contatteremo presto.
-          </div>
+          <div class="fg"><label for="msg">Messaggio *</label><textarea id="msg" name="Messaggio" placeholder="Descrivi il problema o la richiesta..." required aria-required="true"></textarea></div>
+          <label class="fcheck"><input type="checkbox" id="privacy" required aria-required="true"/><span>Ho letto l&apos;<a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Informativa Privacy</a> e autorizzo il trattamento dei miei dati. *</span></label>
+          <label class="fcheck"><input type="checkbox" id="mkt"/><span>Acconsento a ricevere comunicazioni promozionali. (facoltativo)</span></label>
+          <button type="submit" class="btn-submit-full" aria-label="Invia richiesta">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Invia richiesta
+          </button>
         </form>
+        <div class="form-success" id="fsuccess" role="alert" aria-live="polite">&#10003; Grazie! La tua richiesta &egrave; stata inviata. Ti risponderemo al pi&ugrave; presto.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     FOOTER
-══════════════════════════════════════════ -->
+</main>
+
+<!-- FOOTER -->
 <footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">
-          <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 2L4 8v12c0 8.5 6.4 16.4 15 18.4C28.6 36.4 35 28.5 35 20V8L19 2Z" fill="#0d2040" stroke="#1a3a5c" stroke-width="1.5"/>
-            <path d="M14 18h4v-4h2v4h4v2h-4v4h-2v-4h-4v-2Z" fill="#f5a623"/>
-            <circle cx="19" cy="19" r="7" stroke="#4fc3f7" stroke-width="1" fill="none" opacity="0.4"/>
-          </svg>
-          <div class="footer-brand-text">
-            <h3>AZ IMPIANTI DI<br>ELSAYED ABDELAZIZ</h3>
-            <p>Impianti Idraulici · Lombardia</p>
-            <p class="footer-piva">P.IVA: IT12345678901</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-nav">
-        <h4>Navigazione</h4>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#cosa-facciamo">Cosa facciamo</a></li>
-          <li><a href="#dove-operiamo">Dove operiamo</a></li>
-          <li><a href="#assistenza">Assistenza 24/7</a></li>
-          <li><a href="#contatti">Contatti</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-contact">
-        <h4>Contatti</h4>
-        <a href="tel:+393289725238"><i class="fas fa-phone"></i> +39 328 972 5238</a>
-        <a href="https://wa.me/393289725238" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a href="#dove-operiamo"><i class="fas fa-map-marker-alt"></i> Lombardia</a>
-      </div>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <strong>AZ Impianti</strong>
+      <div class="tagline">di Elsayed Abdelaziz — Monza</div>
+      <p>Idraulico a Monza dal primo intervento all&apos;impianto completo.</p>
+      <p>P.IVA: 13848220961 &nbsp;|&nbsp; REA: MB-2747327</p>
+      <p>Via Brembo 1, 20900 Monza (MB)</p>
+      <p><a href="mailto:abdelaziz@azimpiantidielsayedabdelaziz.com" style="color:var(--muted);">abdelaziz@azimpiantidielsayedabdelaziz.com</a></p>
     </div>
-
-    <hr class="footer-divider" />
-
-    <div class="footer-bottom">
-      <p>© 2025 AZ Impianti di Elsayed Abdelaziz. Tutti i diritti riservati.</p>
-      <p><a href="#">Privacy Policy</a></p>
+    <nav class="footer-col" aria-label="Link footer">
+      <h4>Navigazione</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#zone">Zone</a></li>
+        <li><a href="#assistenza">Assistenza 24/7</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+    <div class="footer-col">
+      <h4>Legale</h4>
+      <ul>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/cookie-policy">Cookie Policy</a></li>
+      </ul>
+      <h4 style="margin-top:1.5rem;">Contatti</h4>
+      <ul>
+        <li><a href="tel:+393289725238" aria-label="Telefono AZ Impianti">&#128222; +39 328 972 5238</a></li>
+        <li><a href="https://wa.me/393289725238" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AZ Impianti">&#128172; WhatsApp</a></li>
+      </ul>
     </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 AZ Impianti di Elsayed Abdelaziz. Tutti i diritti riservati.</span>
+    <span><a href="/privacy-policy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/cookie-policy">Cookie</a></span>
   </div>
 </footer>
 
-<!-- ══════════════════════════════════════════
-     JAVASCRIPT
-══════════════════════════════════════════ -->
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" role="dialog" aria-label="Consenso cookie" aria-live="polite">
+  <p>Questo sito usa cookie tecnici necessari. Consulta la <a href="/cookie-policy">Cookie Policy</a>.</p>
+  <div class="cookie-btns">
+    <button id="cookie-accept" aria-label="Accetta cookie">Accetta</button>
+    <button id="cookie-reject" aria-label="Rifiuta cookie">Rifiuta</button>
+  </div>
+</div>
+
 <script>
-(function () {
-  'use strict';
+  // Navbar
+  const nb = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nb.classList.toggle('scrolled', scrollY > 60), {passive:true});
 
-  /* ── Navbar scroll shadow ── */
-  var navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', function () {
-    navbar.classList.toggle('scrolled', window.scrollY > 20);
-  }, { passive: true });
-
-  /* ── Mobile hamburger ── */
-  var hamburger = document.getElementById('hamburger');
-  var mobileMenu = document.getElementById('mobile-menu');
-
-  hamburger.addEventListener('click', function () {
-    var open = mobileMenu.classList.toggle('open');
-    hamburger.classList.toggle('open', open);
-    hamburger.setAttribute('aria-expanded', String(open));
-    mobileMenu.setAttribute('aria-hidden', String(!open));
+  // Hamburger
+  const hb = document.getElementById('hamburger');
+  const nl = document.getElementById('nav-links');
+  hb.addEventListener('click', () => {
+    const o = nl.classList.toggle('open');
+    hb.classList.toggle('open', o);
+    hb.setAttribute('aria-expanded', String(o));
   });
+  nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nl.classList.remove('open'); hb.classList.remove('open');
+    hb.setAttribute('aria-expanded','false');
+  }));
 
-  mobileMenu.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      mobileMenu.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      mobileMenu.setAttribute('aria-hidden', 'true');
-    });
-  });
-
-  /* ── Carousel ── */
-  var TOTAL = 9;
-  var current = 0;
-
-  var slideImages = document.querySelectorAll('.slide-image');
-  var slideContents = document.querySelectorAll('.slide-content');
-  var dots = document.querySelectorAll('.carousel-dot');
-  var counter = document.getElementById('carousel-counter');
-
-  function pad(n) { return n < 10 ? '0' + n : String(n); }
-
-  function goTo(index) {
-    if (index < 0) index = TOTAL - 1;
-    if (index >= TOTAL) index = 0;
-
-    slideImages[current].classList.remove('active');
-    slideContents[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    dots[current].setAttribute('aria-selected', 'false');
-
-    current = index;
-
-    slideImages[current].classList.add('active');
-    slideContents[current].classList.add('active');
-    dots[current].classList.add('active');
-    dots[current].setAttribute('aria-selected', 'true');
-
-    counter.textContent = pad(current + 1) + ' / ' + pad(TOTAL);
-  }
-
-  document.getElementById('prev-btn').addEventListener('click', function () { goTo(current - 1); });
-  document.getElementById('next-btn').addEventListener('click', function () { goTo(current + 1); });
-
-  dots.forEach(function (dot) {
-    dot.addEventListener('click', function () {
-      goTo(parseInt(dot.getAttribute('data-index'), 10));
-    });
-  });
-
-  /* Keyboard navigation (only when focus is inside carousel) */
-  var carouselWrap = document.querySelector('.carousel-wrapper');
-  carouselWrap.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); }
-    if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
-  });
-
-  /* Touch swipe */
-  var touchStartX = 0;
-  var imageWrap = document.getElementById('carousel-image-wrap');
-  imageWrap.addEventListener('touchstart', function (e) {
-    touchStartX = e.changedTouches[0].clientX;
-  }, { passive: true });
-  imageWrap.addEventListener('touchend', function (e) {
-    var dx = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(dx) > 40) { goTo(dx < 0 ? current + 1 : current - 1); }
-  }, { passive: true });
-
-  /* ── Fade-in on scroll ── */
-  var fadeEls = document.querySelectorAll('.fade-in');
-  if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+  // FAQ
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = '0';
+        i.querySelector('.faq-q').setAttribute('aria-expanded','false');
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    fadeEls.forEach(function (el) { observer.observe(el); });
-  } else {
-    fadeEls.forEach(function (el) { el.classList.add('visible'); });
-  }
-
-  /* ── Contact form ── */
-  var form = document.getElementById('contact-form');
-  var formSuccess = document.getElementById('form-success');
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    var nome = form.querySelector('#nome').value.trim();
-    var privacy = form.querySelector('#privacy').checked;
-
-    if (!nome) {
-      form.querySelector('#nome').focus();
-      form.querySelector('#nome').style.borderColor = '#f5a623';
-      return;
-    }
-    if (!privacy) {
-      form.querySelector('#privacy').focus();
-      return;
-    }
-
-    formSuccess.classList.add('show');
-    var btn = form.querySelector('.btn-submit');
-    btn.disabled = true;
-    btn.textContent = 'Richiesta inviata';
-
-    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  });
-
-  /* Reset input border on input */
-  form.querySelector('#nome').addEventListener('input', function () {
-    this.style.borderColor = '';
-  });
-
-  /* ── Smooth scroll for anchor links ── */
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      var hash = anchor.getAttribute('href');
-      if (hash === '#') return;
-      var target = document.querySelector(hash);
-      if (target) {
-        e.preventDefault();
-        var navH = navbar.offsetHeight || 70;
-        var top = target.getBoundingClientRect().top + window.pageYOffset - navH - 12;
-        window.scrollTo({ top: top, behavior: 'smooth' });
+      if (!open) {
+        item.classList.add('open');
+        const a = item.querySelector('.faq-a');
+        a.style.maxHeight = a.scrollHeight + 'px';
+        item.querySelector('.faq-q').setAttribute('aria-expanded','true');
       }
     });
   });
 
-})();
+  // Fade-in
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+  // Cookie
+  const cb = document.getElementById('cookie-banner');
+  if (!localStorage.getItem('cookieConsent')) cb.style.display = 'flex';
+  document.getElementById('cookie-accept').onclick = () => { localStorage.setItem('cookieConsent','accepted'); cb.style.display='none'; };
+  document.getElementById('cookie-reject').onclick = () => { localStorage.setItem('cookieConsent','rejected'); cb.style.display='none'; };
+
+  // Form
+  document.getElementById('cform').addEventListener('submit', e => {
+    if (!document.getElementById('privacy').checked) {
+      e.preventDefault();
+      alert('Per favore accetta la Privacy Policy per inviare la richiesta.');
+      return;
+    }
+    setTimeout(() => { document.getElementById('fsuccess').style.display = 'block'; }, 500);
+  });
 </script>
 </body>
 </html>

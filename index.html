@@ -124,22 +124,25 @@
       position:relative;min-height:100vh;
       display:flex;align-items:center;
       overflow:hidden;
-      background:var(--dark);
+      background:linear-gradient(135deg,#0B1F33 0%,#13314F 45%,#163C5E 75%,#0F2744 100%);
     }
     /* PIPE BACKGROUND */
     .pipe-bg{
       position:absolute;inset:0;
       background:
-        linear-gradient(rgba(8,12,18,0.82),rgba(8,12,18,0.72)),
-        repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,107,0,0.015) 60px,rgba(255,107,0,0.015) 61px),
-        repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(10,124,193,0.02) 60px,rgba(10,124,193,0.02) 61px);
+        radial-gradient(circle at 75% 35%,rgba(10,124,193,0.22) 0%,transparent 55%),
+        linear-gradient(rgba(8,18,30,0.55),rgba(8,18,30,0.55)),
+        repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,107,0,0.02) 60px,rgba(255,107,0,0.02) 61px),
+        repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(10,124,193,0.04) 60px,rgba(10,124,193,0.04) 61px);
     }
     /* Animated pipe SVG */
     .pipe-visual{
       position:absolute;right:-60px;top:50%;transform:translateY(-50%);
-      width:55%;max-width:720px;opacity:0.18;
+      width:58%;max-width:760px;opacity:0.55;
+      filter:drop-shadow(0 0 40px rgba(10,124,193,0.25));
       pointer-events:none;
     }
+    @media(max-width:900px){.pipe-visual{opacity:0.32;width:80%;right:-100px;}}
     /* Water drip animation */
     .water-drip{
       position:absolute;
@@ -264,39 +267,65 @@
     .section-title{font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:0.75rem;letter-spacing:-0.5px;}
     .section-sub{color:var(--muted);font-size:0.95rem;max-width:560px;line-height:1.75;}
 
-    /* ── SERVIZI ── */
+    /* ── SERVIZI (CAROUSEL) ── */
     #servizi{background:var(--dark2);}
-    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem;}
-    .svc-card{
-      background:var(--dark3);
-      border:1px solid rgba(255,255,255,0.06);
-      border-radius:14px;padding:2rem 1.75rem;
-      position:relative;overflow:hidden;
-      transition:transform 0.25s,border-color 0.25s,box-shadow 0.25s;
+    .svc-carousel{
+      position:relative;margin-top:3.5rem;
+      background:var(--dark3);border:1px solid rgba(255,255,255,0.06);
+      border-radius:18px;overflow:hidden;
+      box-shadow:0 20px 60px rgba(0,0,0,0.35);
     }
-    .svc-card::before{
-      content:'';position:absolute;top:0;left:0;right:0;height:2px;
-      background:linear-gradient(90deg,var(--orange),transparent);
-      opacity:0;transition:opacity 0.3s;
+    .svc-track{
+      display:flex;transition:transform 0.45s cubic-bezier(.4,0,.2,1);
+      touch-action:pan-y;
     }
-    .svc-card:hover{transform:translateY(-4px);border-color:rgba(255,107,0,0.25);box-shadow:0 12px 36px rgba(0,0,0,0.4),0 0 0 1px rgba(255,107,0,0.1);}
-    .svc-card:hover::before{opacity:1;}
-    .svc-img{
-      width:100%;height:200px;object-fit:cover;
-      border-radius:10px;margin-bottom:1.25rem;
-      display:block;
+    .svc-slide{
+      flex:0 0 100%;width:100%;
+      display:grid;grid-template-columns:1fr 1fr;gap:0;
+      align-items:stretch;
     }
-    .svc-icon-wrap{
-      width:50px;height:50px;border-radius:12px;
-      background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);
-      display:flex;align-items:center;justify-content:center;
-      margin-bottom:1.25rem;
+    .svc-slide-img-wrap{position:relative;overflow:hidden;min-height:340px;}
+    .svc-slide-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+    .svc-counter{
+      position:absolute;top:1rem;right:1rem;
+      background:rgba(8,12,18,0.7);backdrop-filter:blur(6px);
+      color:var(--orange);font-weight:800;font-size:0.78rem;letter-spacing:1px;
+      padding:0.4rem 0.85rem;border-radius:100px;border:1px solid rgba(255,107,0,0.3);
     }
-    .svc-icon-wrap svg{width:24px;height:24px;color:var(--orange);}
-    .svc-card h3{font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.5rem;}
-    .svc-card p{color:var(--muted);font-size:0.875rem;line-height:1.65;}
-    @media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr);}}
-    @media(max-width:600px){.services-grid{grid-template-columns:1fr;}}
+    .svc-slide-body{padding:2.5rem 2.75rem;display:flex;flex-direction:column;justify-content:center;}
+    .svc-slide-body h3{font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:1rem;letter-spacing:-0.3px;}
+    .svc-slide-body p{color:var(--muted);font-size:0.95rem;line-height:1.75;margin-bottom:1.5rem;}
+    .svc-tags{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:1.75rem;}
+    .svc-tag{
+      background:var(--dark2);border:1px solid rgba(255,255,255,0.08);
+      border-radius:10px;padding:0.6rem 1rem;flex:1;min-width:120px;
+    }
+    .svc-tag span{display:block;color:var(--muted);font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:0.2rem;}
+    .svc-tag strong{color:#fff;font-size:0.92rem;font-weight:700;}
+    .svc-slide-actions{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+    .svc-nav{display:flex;gap:0.6rem;}
+    .svc-nav button{
+      width:42px;height:42px;border-radius:10px;flex-shrink:0;
+      background:var(--steel);border:1px solid rgba(255,255,255,0.08);
+      color:#fff;display:flex;align-items:center;justify-content:center;
+      cursor:pointer;transition:background 0.2s,border-color 0.2s;
+    }
+    .svc-nav button:hover{background:var(--steel2);border-color:rgba(255,107,0,0.3);}
+    .svc-nav svg{width:18px;height:18px;}
+    .svc-dots{display:flex;gap:0.4rem;align-items:center;margin-top:1.5rem;}
+    .svc-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:all 0.25s;border:none;padding:0;}
+    .svc-dot.active{width:26px;border-radius:4px;background:var(--orange);box-shadow:0 0 10px rgba(255,107,0,0.5);}
+    .svc-hint{
+      position:absolute;top:1rem;left:1rem;
+      background:rgba(8,12,18,0.7);backdrop-filter:blur(6px);
+      color:var(--text);font-size:0.72rem;font-weight:600;
+      padding:0.35rem 0.75rem;border-radius:100px;display:flex;align-items:center;gap:0.35rem;
+    }
+    @media(max-width:900px){
+      .svc-slide{grid-template-columns:1fr;}
+      .svc-slide-img-wrap{min-height:240px;}
+      .svc-slide-body{padding:1.75rem 1.5rem;}
+    }
 
     /* ── PERCHE' ── */
     #perche{background:var(--dark);}
@@ -532,19 +561,47 @@
   <div class="pipe-bg"></div>
   <!-- Pipe SVG decorativa -->
   <svg class="pipe-visual" viewBox="0 0 700 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <rect x="100" y="80" width="500" height="60" rx="8" fill="#1C2A3A" stroke="#2A3F55" stroke-width="2"/>
-    <rect x="100" y="88" width="500" height="10" rx="3" fill="#243344"/>
-    <rect x="100" y="120" width="500" height="10" rx="3" fill="#162030"/>
-    <rect x="280" y="140" width="60" height="220" rx="8" fill="#1C2A3A" stroke="#2A3F55" stroke-width="2"/>
-    <rect x="288" y="140" width="10" height="220" rx="2" fill="#243344"/>
-    <rect x="330" y="140" width="10" height="220" rx="2" fill="#162030"/>
-    <rect x="500" y="140" width="60" height="160" rx="8" fill="#1C2A3A" stroke="#2A3F55" stroke-width="2"/>
-    <rect x="160" y="200" width="120" height="50" rx="8" fill="#1C2A3A" stroke="#2A3F55" stroke-width="2"/>
-    <circle cx="220" cy="225" r="18" fill="#243344" stroke="#2A3F55" stroke-width="2"/>
-    <circle cx="220" cy="225" r="8" fill="#1C2A3A"/>
-    <circle cx="310" cy="360" r="6" fill="#0A7CC1" opacity="0.8"/>
-    <circle cx="312" cy="370" r="4" fill="#0A7CC1" opacity="0.6"/>
-    <ellipse cx="310" cy="385" rx="18" ry="5" fill="#0A7CC1" opacity="0.15"/>
+    <defs>
+      <linearGradient id="pipeMetal" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#5A7184"/>
+        <stop offset="35%" stop-color="#2E4258"/>
+        <stop offset="65%" stop-color="#1C2A3A"/>
+        <stop offset="100%" stop-color="#0E1722"/>
+      </linearGradient>
+      <linearGradient id="pipeMetalV" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#5A7184"/>
+        <stop offset="35%" stop-color="#2E4258"/>
+        <stop offset="65%" stop-color="#1C2A3A"/>
+        <stop offset="100%" stop-color="#0E1722"/>
+      </linearGradient>
+      <radialGradient id="cyanGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#4FC3F7" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#4FC3F7" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <!-- main horizontal pipe -->
+    <rect x="100" y="80" width="500" height="60" rx="10" fill="url(#pipeMetal)" stroke="#0A7CC1" stroke-width="1.5" stroke-opacity="0.5"/>
+    <rect x="100" y="86" width="500" height="6" rx="3" fill="#7C93A6" opacity="0.55"/>
+    <!-- flange joints -->
+    <rect x="270" y="72" width="20" height="76" rx="4" fill="#243344" stroke="#0A7CC1" stroke-width="1" stroke-opacity="0.4"/>
+    <rect x="480" y="72" width="20" height="76" rx="4" fill="#243344" stroke="#0A7CC1" stroke-width="1" stroke-opacity="0.4"/>
+    <!-- vertical pipe -->
+    <rect x="280" y="140" width="60" height="220" rx="10" fill="url(#pipeMetalV)" stroke="#0A7CC1" stroke-width="1.5" stroke-opacity="0.5"/>
+    <rect x="286" y="140" width="6" height="220" rx="2" fill="#7C93A6" opacity="0.5"/>
+    <!-- secondary vertical pipe -->
+    <rect x="500" y="140" width="60" height="160" rx="10" fill="url(#pipeMetalV)" stroke="#0A7CC1" stroke-width="1.5" stroke-opacity="0.5"/>
+    <rect x="506" y="140" width="6" height="160" rx="2" fill="#7C93A6" opacity="0.5"/>
+    <!-- valve -->
+    <rect x="160" y="195" width="130" height="56" rx="10" fill="#243344" stroke="#0A7CC1" stroke-width="1.5" stroke-opacity="0.5"/>
+    <circle cx="225" cy="223" r="22" fill="#2E4258" stroke="#4FC3F7" stroke-width="2" stroke-opacity="0.6"/>
+    <circle cx="225" cy="223" r="10" fill="#162030"/>
+    <line x1="225" y1="201" x2="225" y2="195" stroke="#4FC3F7" stroke-width="3" stroke-opacity="0.7"/>
+    <!-- leak point glow -->
+    <circle cx="310" cy="360" r="40" fill="url(#cyanGlow)"/>
+    <circle cx="310" cy="358" r="7" fill="#7FDBFF"/>
+    <circle cx="313" cy="370" r="5" fill="#4FC3F7" opacity="0.85"/>
+    <ellipse cx="310" cy="388" rx="22" ry="6" fill="#4FC3F7" opacity="0.25"/>
+    <ellipse cx="310" cy="388" rx="34" ry="9" fill="#4FC3F7" opacity="0.1"/>
   </svg>
   <!-- Water drips -->
   <div class="water-drip drip1"></div>
@@ -604,43 +661,140 @@
     <p class="section-label">I NOSTRI SERVIZI</p>
     <h2 class="section-title" id="servizi-title">Cosa facciamo</h2>
     <p class="section-sub">Interventi tecnici per impianti, manutenzioni e pronto intervento in tutta la Lombardia.</p>
-    <div class="services-grid">
-      <article class="svc-card fi">
-        <img src="img/servizi/inox.jpg" alt="Impianti in acciaio inox AZ Impianti Monza" class="svc-img" loading="lazy"/>
-        <div class="svc-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/><circle cx="19" cy="6" r="2.5" fill="currentColor" stroke="none"/><circle cx="5" cy="18" r="2.5" fill="currentColor" stroke="none"/></svg></div>
-        <h3>Impianti in acciaio inox</h3>
-        <p>Realizzazione completa di impianti idraulici in acciaio inox con raccordi a pressare, per ambienti civili e industriali.</p>
-      </article>
-      <article class="svc-card fi fi-d1">
-        <img src="img/servizi/bagno.jpg" alt="Sanitari e rubinetteria di design AZ Impianti Monza" class="svc-img" loading="lazy"/>
-        <div class="svc-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12s2.545-5 7-5c4.454 0 7 5 7 5s-2.546 5-7 5c-4.455 0-7-5-7-5z"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><path d="M3 7V5a2 2 0 012-2h14a2 2 0 012 2v2M3 17v2a2 2 0 002 2h14a2 2 0 002-2v-2"/></svg></div>
-        <h3>Sanitari e rubinetteria di design</h3>
-        <p>Installazione di lavabi, piatti doccia, rubinetteria su misura. Finitura scarichi e messa in opera con massima cura estetica.</p>
-      </article>
-      <article class="svc-card fi fi-d2">
-        <img src="img/servizi/pompa-calore.jpg" alt="Pompe di calore AZ Impianti Monza" class="svc-img" loading="lazy"/>
-        <div class="svc-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 18.66l-1.41 1.41M21 12h-2M5 12H3M18.66 18.66l-1.41-1.41M6.75 6.75L5.34 5.34M12 19v2M12 3V1"/></svg></div>
-        <h3>Pompe di calore e accumulo</h3>
-        <p>Installazione e collaudo di pompe di calore aria-acqua abbinate a serbatoi di accumulo ad alta capacità.</p>
-      </article>
-      <article class="svc-card fi fi-d3">
-        <img src="img/servizi/centrale-termica.jpg" alt="Centrali termiche AZ Impianti Monza" class="svc-img" loading="lazy"/>
-        <div class="svc-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
-        <h3>Centrali termiche complete</h3>
-        <p>Progettazione e installazione di centrali termiche complete, dal gas o solare termico ai collettori di distribuzione.</p>
-      </article>
-      <article class="svc-card fi fi-d4">
-        <img src="img/servizi/riscaldamento-pavimento.jpg" alt="Riscaldamento a pavimento AZ Impianti Monza" class="svc-img" loading="lazy"/>
-        <div class="svc-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-        <h3>Riscaldamento a pavimento</h3>
-        <p>Collettori multicircuito e tubi multistrato. Bilanciamento idraulico, collaudo a pressione e integrazione con pompa di calore.</p>
-      </article>
-      <article class="svc-card fi fi-d5">
-        <img src="img/servizi/samsung.jpg" alt="Pompe di calore Samsung AZ Impianti Monza" class="svc-img" loading="lazy"/>
-        <div class="svc-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg></div>
-        <h3>Pompe di calore Samsung</h3>
-        <p>Configurazione e messa in servizio con pannello di controllo integrato. Curve climatiche e parametri di efficienza energetica.</p>
-      </article>
+    <div class="svc-carousel">
+      <span class="svc-hint" aria-hidden="true">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/></svg>
+        tocca per scorrere
+      </span>
+      <div class="svc-track" id="svcTrack">
+        <article class="svc-slide">
+          <div class="svc-slide-img-wrap">
+            <img src="img/servizi/inox.jpg" alt="Impianti in acciaio inox AZ Impianti Monza" loading="lazy"/>
+            <span class="svc-counter">01 / 06</span>
+          </div>
+          <div class="svc-slide-body">
+            <h3>Impianti in acciaio inox</h3>
+            <p>Realizzazione completa di impianti idraulici in acciaio inox con raccordi a pressare. Tubazioni a vista o incassate, fissate a parete con collari professionali per ambienti industriali, commerciali e residenziali di pregio.</p>
+            <div class="svc-tags">
+              <div class="svc-tag"><span>Disponibilità</span><strong>Lun-Dom</strong></div>
+              <div class="svc-tag"><span>Area</span><strong>Lombardia</strong></div>
+            </div>
+            <div class="svc-slide-actions">
+              <div class="svc-nav">
+                <button type="button" class="svc-prev" aria-label="Servizio precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+                <button type="button" class="svc-next" aria-label="Servizio successivo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+              </div>
+              <a href="tel:+393289725238" class="btn-neon btn-sm">📞 Richiedi preventivo</a>
+            </div>
+          </div>
+        </article>
+        <article class="svc-slide">
+          <div class="svc-slide-img-wrap">
+            <img src="img/servizi/bagno.jpg" alt="Sanitari e rubinetteria di design AZ Impianti Monza" loading="lazy"/>
+            <span class="svc-counter">02 / 06</span>
+          </div>
+          <div class="svc-slide-body">
+            <h3>Sanitari e rubinetteria di design</h3>
+            <p>Installazione di lavabi, piatti doccia, rubinetteria su misura. Finitura scarichi e messa in opera con la massima cura estetica, per bagni moderni e di pregio.</p>
+            <div class="svc-tags">
+              <div class="svc-tag"><span>Disponibilità</span><strong>Lun-Dom</strong></div>
+              <div class="svc-tag"><span>Area</span><strong>Lombardia</strong></div>
+            </div>
+            <div class="svc-slide-actions">
+              <div class="svc-nav">
+                <button type="button" class="svc-prev" aria-label="Servizio precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+                <button type="button" class="svc-next" aria-label="Servizio successivo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+              </div>
+              <a href="tel:+393289725238" class="btn-neon btn-sm">📞 Richiedi preventivo</a>
+            </div>
+          </div>
+        </article>
+        <article class="svc-slide">
+          <div class="svc-slide-img-wrap">
+            <img src="img/servizi/pompa-calore.jpg" alt="Pompe di calore AZ Impianti Monza" loading="lazy"/>
+            <span class="svc-counter">03 / 06</span>
+          </div>
+          <div class="svc-slide-body">
+            <h3>Pompe di calore e accumulo</h3>
+            <p>Installazione e collaudo di pompe di calore aria-acqua abbinate a serbatoi di accumulo ad alta capacità, per il massimo risparmio energetico tutto l'anno.</p>
+            <div class="svc-tags">
+              <div class="svc-tag"><span>Disponibilità</span><strong>Lun-Dom</strong></div>
+              <div class="svc-tag"><span>Area</span><strong>Lombardia</strong></div>
+            </div>
+            <div class="svc-slide-actions">
+              <div class="svc-nav">
+                <button type="button" class="svc-prev" aria-label="Servizio precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+                <button type="button" class="svc-next" aria-label="Servizio successivo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+              </div>
+              <a href="tel:+393289725238" class="btn-neon btn-sm">📞 Richiedi preventivo</a>
+            </div>
+          </div>
+        </article>
+        <article class="svc-slide">
+          <div class="svc-slide-img-wrap">
+            <img src="img/servizi/centrale-termica.jpg" alt="Centrali termiche AZ Impianti Monza" loading="lazy"/>
+            <span class="svc-counter">04 / 06</span>
+          </div>
+          <div class="svc-slide-body">
+            <h3>Centrali termiche complete</h3>
+            <p>Progettazione e installazione di centrali termiche complete, dal gas o solare termico ai collettori di distribuzione, con messa a norma e collaudo finale.</p>
+            <div class="svc-tags">
+              <div class="svc-tag"><span>Disponibilità</span><strong>Lun-Dom</strong></div>
+              <div class="svc-tag"><span>Area</span><strong>Lombardia</strong></div>
+            </div>
+            <div class="svc-slide-actions">
+              <div class="svc-nav">
+                <button type="button" class="svc-prev" aria-label="Servizio precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+                <button type="button" class="svc-next" aria-label="Servizio successivo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+              </div>
+              <a href="tel:+393289725238" class="btn-neon btn-sm">📞 Richiedi preventivo</a>
+            </div>
+          </div>
+        </article>
+        <article class="svc-slide">
+          <div class="svc-slide-img-wrap">
+            <img src="img/servizi/riscaldamento-pavimento.jpg" alt="Riscaldamento a pavimento AZ Impianti Monza" loading="lazy"/>
+            <span class="svc-counter">05 / 06</span>
+          </div>
+          <div class="svc-slide-body">
+            <h3>Riscaldamento a pavimento</h3>
+            <p>Collettori multicircuito e tubi multistrato. Bilanciamento idraulico, collaudo a pressione e integrazione con pompa di calore per il massimo confort.</p>
+            <div class="svc-tags">
+              <div class="svc-tag"><span>Disponibilità</span><strong>Lun-Dom</strong></div>
+              <div class="svc-tag"><span>Area</span><strong>Lombardia</strong></div>
+            </div>
+            <div class="svc-slide-actions">
+              <div class="svc-nav">
+                <button type="button" class="svc-prev" aria-label="Servizio precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+                <button type="button" class="svc-next" aria-label="Servizio successivo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+              </div>
+              <a href="tel:+393289725238" class="btn-neon btn-sm">📞 Richiedi preventivo</a>
+            </div>
+          </div>
+        </article>
+        <article class="svc-slide">
+          <div class="svc-slide-img-wrap">
+            <img src="img/servizi/samsung.jpg" alt="Pompe di calore Samsung AZ Impianti Monza" loading="lazy"/>
+            <span class="svc-counter">06 / 06</span>
+          </div>
+          <div class="svc-slide-body">
+            <h3>Pompe di calore Samsung</h3>
+            <p>Configurazione e messa in servizio con pannello di controllo integrato. Curve climatiche e parametri di efficienza energetica ottimizzati per ogni stagione.</p>
+            <div class="svc-tags">
+              <div class="svc-tag"><span>Disponibilità</span><strong>Lun-Dom</strong></div>
+              <div class="svc-tag"><span>Area</span><strong>Lombardia</strong></div>
+            </div>
+            <div class="svc-slide-actions">
+              <div class="svc-nav">
+                <button type="button" class="svc-prev" aria-label="Servizio precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+                <button type="button" class="svc-next" aria-label="Servizio successivo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+              </div>
+              <a href="tel:+393289725238" class="btn-neon btn-sm">📞 Richiedi preventivo</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="svc-dots" id="svcDots" style="justify-content:center;padding-bottom:1.5rem;"></div>
     </div>
   </div>
 </section>
@@ -944,6 +1098,49 @@
       }
     });
   });
+
+  // Servizi carousel
+  (function(){
+    const track = document.getElementById('svcTrack');
+    const slides = Array.from(track.children);
+    const dotsWrap = document.getElementById('svcDots');
+    let idx = 0, autoTimer;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'svc-dot' + (i === 0 ? ' active' : '');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', 'Vai al servizio ' + (i+1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function goTo(i) {
+      idx = (i + slides.length) % slides.length;
+      track.style.transform = `translateX(-${idx * 100}%)`;
+      dots.forEach((d, j) => d.classList.toggle('active', j === idx));
+    }
+    function next() { goTo(idx + 1); }
+    function prev() { goTo(idx - 1); }
+    function restartAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(next, 5000);
+    }
+    track.querySelectorAll('.svc-next').forEach(b => b.addEventListener('click', () => { next(); restartAuto(); }));
+    track.querySelectorAll('.svc-prev').forEach(b => b.addEventListener('click', () => { prev(); restartAuto(); }));
+
+    let startX = 0, deltaX = 0, dragging = false;
+    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; dragging = true; }, {passive:true});
+    track.addEventListener('touchmove', e => { if (dragging) deltaX = e.touches[0].clientX - startX; }, {passive:true});
+    track.addEventListener('touchend', () => {
+      if (Math.abs(deltaX) > 50) { deltaX < 0 ? next() : prev(); restartAuto(); }
+      dragging = false; deltaX = 0;
+    });
+
+    goTo(0);
+    restartAuto();
+  })();
 
   // Fade-in
   const obs = new IntersectionObserver(entries => {
